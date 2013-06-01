@@ -1,0 +1,4 @@
+drwxrwxr-x    2 962      962          4096 Dec 30  2009 .
+drwx--x--x   12 962      962          4096 May 31 23:46 ..
+-rw-rw-r--    1 962      962             0 Dec 30  2009 .htaccess
+-rw-rw-r--    1 962      962           764 Dec 30  2009 dbconnect.php

@@ -1,0 +1,225 @@
+body {
+	background-attachment:scroll;
+	background-color: #646464;
+	background-image: url(images/background.jpg);
+	background-repeat: repeat-x;
+	margin: auto;
+	font-family:arial;
+	font-size:10pt;
+	color:#000000;
+}
+
+a{ 
+	color:#C0262D;
+	text-decoration:none;
+}
+
+a:hover{ 
+	color:#F1A092;
+}
+
+p {
+	margin-bottom:1em;
+	margin-top:1em;
+}
+
+.header1 {
+	color:#000000;
+	font-size:18px;
+	padding-bottom:5px;
+	font-weight:600;
+}
+
+.header2 {
+	color:#000000;
+	font-size:14pt;
+	padding-bottom:5px;
+	font-weight:bold;
+}
+
+.header3 {
+	color:#000000;
+	font-size:11pt;
+	padding-bottom:5px;
+	font-weight:bold;
+}
+
+.header4 {
+	color:#C0262D;
+	font-size:11px;
+	padding-bottom:5px;
+	font-weight:bold;
+}
+
+#main_frame {
+	background-image: url(images/bg_body.jpg);
+	width: 917px;
+}
+
+
+#header_frame {
+	background-image: url(images/bg_header2.jpg);
+	background-repeat: repeat-y;
+	height: 167px;
+	width: 917px;
+	text-align:left;
+}
+
+#menu_table {
+	 width:900px;
+	 height:17px;
+	 text-align:center;
+	 padding-top:0px;
+	 font-family:arial;
+	 font-size:8pt;
+	 font-weight:bold;
+	  color:#FFFFFF;
+	 cursor:pointer;
+}
+
+#menu_table td{
+	border-left:1px solid #7d1d20;
+	border-right:1px solid #b62b30;
+}
+
+#footer {
+	background-image: url(images/bg_footer.jpg);
+	background-repeat: no-repeat;
+	height: 38px;
+	width: 917px;
+}
+
+#box {
+	background-image: url(images/box_body.jpg);
+	background-repeat:repeat-y;
+}
+
+#box_top {
+
+}
+
+#box_content {
+	margin-left:15px;
+	font-size:10px;
+}
+
+#box_bottom {
+
+	margin-bottom:-5px;
+}
+
+
+#page_contents {
+	margin-left: 20px;
+	margin-right: 20px;
+	padding-top:15px;
+	text-align:justify;
+	line-height:17px;
+	min-height:200px;
+
+}
+
+#left_menu {
+	background-image: url(images/deco_vertical_line.jpg);
+	background-color:#00CCCC;
+	float: left;
+	width:226px;
+
+	margin-left: 10px;
+	padding-left: 0px;
+	font-size: 10pt;
+	margin-top:-8px;
+	text-align:left;
+}
+
+#left_menu_contents {
+	padding:0px 10px 10px 10px;
+}
+
+#deco_top_shadow {
+}
+
+#mhlp_logo {
+	margin:7px 10px 10px 20px;	
+}
+
+#top {
+	margin-left: 0px;
+	margin-top:-5px;
+}
+
+.browser_options {
+	font-weight: bold;
+	cursor:pointer;
+}
+
+.browser_list {
+	float:left; 
+	width:210px; 
+	font-size:10pt; 
+	line-height:normal; 
+	text-align:left;
+	margin-bottom:10px;
+}
+
+.browser_toc {
+	position:absolute; 
+	width:350px;
+	background-color:#FFFFFF;
+	border:2px solid #000000;
+	padding:15px;
+	font-size:11px; 
+	line-height:normal; 
+	text-align:left;
+}
+
+.browser_toc a{
+	color:#990000;
+}
+
+.browser_toc a:hover{
+	color:#990000;
+}
+
+
+.browser_top
+{
+	border: 1px solid #CCCCCC;
+	border-bottom: none;
+}
+
+.browser_bottom
+{
+	border: 1px solid #CCCCCC;
+	border-top: none;
+	margin-top:-3px;
+	height:30px;
+}
+
+.current_article a{
+	background-color:#ECECEC;
+	color:#000000;
+}
+
+.submenu {
+	position:absolute;
+	text-align:left;
+	z-index:99;
+	cursor:pointer;
+	color:#FFFFFF;
+	font-size:11px;
+	font-family: arial;
+	text-align:center;
+}
+
+.submenu td {
+	border:1px solid #8c1f23;
+	background-image: url(images/submenu_bg.jpg);
+}
+.submenu td:hover {
+	color:#000000;
+	cursor:pointer;
+	background-image: url(images/submenu_bg_hover.jpg);
+	background-color:#CCCCCC;
+}
+

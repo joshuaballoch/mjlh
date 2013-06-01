@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>joining</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="/styles/style.css" type="text/css" media="screen" />
+</head>
+
+<form name="joinform" method="POST" action="<?php echo $PHP_SELF;?>">
+
+<table width="75%" border="0" cellpadding="10" align="center">
+<tr><td colspan=2><div align="center">
+  </div></td></tr>
+  <tr>
+    <td>First Name</td>
+    <td>
+      <input name="firstname" type="text" size="20" maxlength="25" value="<?php echo $_POST[firstname] ?>">
+    </td>
+  </tr>
+  <tr>
+    <td>Last Name</td>
+    <td>
+      <input name="lastname" type="text" size="20" maxlength="25" value="<?php echo $_POST[lastname] ?>">
+    </td>
+  </tr>
+  <tr>
+    <td>Birthday (dd/mm/yyyy)</td>
+    <td>
+      	<input name="bday" type="text" size="2" maxlength="2" value="<?php echo $_POST[bday] ?>"> /
+		<input name="bmonth" type="text" id="bmonth2" size="2" maxlength="2" value="<?php echo $_POST[bmonth] ?>"> /
+		<input name="byear" type="text" id="byear" size="4" maxlength="4" value="<?php echo $_POST[byear] ?>">
+    </td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td><input name="email" type="text" size="35" maxlength="255" value="<?php echo $_POST[email] ?>">
+    </td>
+  </tr>
+  <tr>
+    <td>Website (if applicable)</td>
+    <td>
+      <input name="website" type="text" size="35" maxlength="255" value="<?php echo $_POST[website] ?>">
+    </td>
+  </tr>
+  <tr>
+    <td>User ID (max. 12 char)</td>
+    <td>
+      <input name="user" type="text" size="12" maxlength="15" value="<?php echo $_POST[user] ?>">
+    </td>
+  </tr>
+  <tr>
+    <td colspan=2 height="76"><p align="center"><input type="submit" name="submit" value="do it."></p></td>
+  </tr>
+</table>
+</form>
+</font>
+</body>
+</html>

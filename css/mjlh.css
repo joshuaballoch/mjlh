@@ -1,0 +1,374 @@
+/*----------General Settings----------*/
+
+body
+{
+   background-color: #C09497;
+   font-family: Arial, Sans-serif;
+   font-size: 11px;
+   margin: 0px;
+}
+
+a, a:link, a:visited { text-decoration: none; color: #C0272C; }
+a:hover { text-decoration: underline; }
+
+img
+{ 
+  border: none;
+}
+
+h1, h2, h3, h4, legend
+{
+  text-transform: uppercase;
+  padding: 0px;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  color: #191970;    /*midnight blue*/
+}
+
+h1
+{
+  letter-spacing: 3px;
+  font-size: 18px;
+}
+
+h2
+{
+  letter-spacing: 3px;
+  font-size: 14px;
+}
+
+h3
+{
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+h4, legend
+{
+  letter-spacing: 2px;
+  font-size: 11px;
+}
+
+p
+{
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+input, textarea, select
+{
+   font-family: Verdana, sans-serif;
+   font-size: 11px;
+}
+
+/*--------Main Layout (Header/Footer Referenced)-------*/
+#topdiv
+{
+  margin: 0px auto;
+  width: 968px;
+  height: 136px;
+  background-image: url(/images/bg_top.jpg);
+  background-repeat:no-repeat;
+  background-color: #FFFFFF;
+
+}
+
+#maindiv
+{
+  margin: 0px auto;
+  width: 968px;
+  background-image: url(/images/bg_mid.jpg);
+  background-repeat:repeat-y;
+  background-color: #FFFFFF;
+  /*border-top: 1px solid black;*/
+}
+
+#bottomdiv
+{
+  margin: 0px auto;
+  width: 968px;
+  height: 32px;
+  background-image: url(/images/bg_bottom.jpg);
+  background-repeat:no-repeat;
+  background-color: #FFFFFF;
+}
+
+#top-innerdiv, #main-innerdiv, #bottom-innerdiv
+{
+  margin: 0px auto;
+  height: 100%;
+}
+
+#top-innerdiv
+{
+  padding-left:2px;
+  width: 950px;
+  color: white;
+  position: relative;   /*Makes this div a 'containing block', which
+                          lets us use absolute to position text in languagelink*/
+}
+
+#top-innerdiv a, #top-innerdiv a:link, #top-innerdiv a:visited { color: white; }
+
+
+#languagelink
+{
+  position: absolute;
+  top: 17px;
+  right: 27px;
+  font-size: 14px;
+}
+
+#bannertext
+{
+  position: absolute;
+  top: 2px;
+  left: 295px;
+  font-size: 32pt;
+  line-height: 115%;
+  font-family: Palatino Linotype, Serif;
+  letter-spacing:-0.3px
+}
+
+#menubar
+{
+ /* border: 1px solid red;*/
+  position: absolute;
+  top: 113px;
+  left: 266px;
+}
+
+#main-innerdiv, #bottom-innerdiv
+{
+  width: 944px;
+  padding: 5px 3px;
+  border-top: 1px solid black;
+}
+
+#volumedetails
+{
+  font-size: 10px;
+  padding-left: 20px;
+}
+#volumedetails p
+{
+  padding-left: 30px;
+}
+
+#volumecontentscell
+{
+  width: 462px;
+  padding-right: 30px;
+  height:100%;
+  font-size: 11px;
+}
+#commentsdiv, #blogcommentsdiv
+{
+  background: #EEEEEE;
+  border: 1px solid #CCCCCC;
+  max-height: 500px;
+  overflow: auto;
+  overflow-x: hidden;
+  width: 430px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+#commentsdiv
+{
+  width: 300px;
+}
+
+#commentsdiv p, #blogcommentsdiv p
+{
+  padding-left: 20px;
+}
+
+/*Home Page*/
+#announcements, #homeblog, #homelinkbar
+{
+  float: left;
+  border: 1px solid black;
+  background: #DDDDDD;
+  width: 470px;
+  padding-left: 10px;
+  padding-right: 5px;
+  margin-left: 15px;
+  margin-top: 8px;
+}
+#announcements
+{
+  font-size: 12px;
+  padding-right: 10px;
+  width: 460px;
+}
+#homeblog, #homelinkbar
+{
+  clear: both;
+  background: #FFFFFF;
+
+}
+#homeblog
+{
+  border: none;
+}
+#homeblog h1
+{
+ margin-top: 2px;
+}
+
+#homelinkbar
+{
+ /* border: 1px solid #CCCCCC;*/
+ border: none;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  text-align: center;
+}
+
+#announcements ul
+{
+  margin-top: 0px;
+  margin-left: 25px;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+#announcements ul li
+{
+  padding-bottom: 10px;
+}
+
+#homevolume
+{
+  margin-left: 510px;
+  border-left: 1px solid black;
+  padding-left: 5px;
+  font-size: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  min-height: 500px;
+}
+
+#homecommentbox
+{
+  border: 1px solid #CCCCCC;
+  margin: 5px;
+  padding: 5px;
+  padding-bottom: 0px; 
+  background:#EEEEEE;
+}
+
+#homeblog h1
+{
+  margin-top: 10px;
+   margin-bottom: 15px;
+}
+
+#homeblog h2, #blogcontentscell h2
+{
+   text-transform: none;
+   letter-spacing: 1px;
+   font-family: Palatino Linotype, Serif;
+   font-size: 22px;
+}
+#homeblogentry, #blogentrydiv
+{
+  font-size: 13px;
+  line-height:140%;
+}
+
+/* Blog*/
+#blogcontentscell
+{
+  padding-left: 15px;
+  padding-right: 30px;
+
+}
+
+#blogcommentsdiv, #bloglistdiv
+{
+  width: 340px;
+
+
+}
+
+#blogcommentsdiv p
+{
+   padding-right: 8px;
+}
+
+#bloglistdiv
+{
+  border: 1px solid black;
+  background: #EEEEEE;
+  border: 1px solid #CCCCCC;
+  max-height: 500px;
+  overflow: auto;
+  overflow-x: hidden;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+
+#bloglistdiv p
+{
+  padding-bottom: 5px;
+}
+
+/* Backend Login Page */
+#logindiv
+{
+  margin: 20px auto;
+  width: 240px;
+  background: white;
+  border: 1px solid black;
+  padding: 3px;
+}
+
+/*Switch volume menu css classes*/
+a.sample_attach, a.sample_attach:visited
+{
+  display: block;
+  margin: 0px;
+  text-align: left;
+
+/*  border:  1px solid black;*/
+  padding: 2px 5px;
+
+  background: #FFFFFF;
+
+
+}
+div.sample_attach
+{
+  
+  text-decoration: none;
+  color: #C0272C;
+  font-weight:bold;
+ /* text-align: right;*/
+ margin-top: 9px;
+ text-align: center;
+  width: 170px;
+  font-size: 11px;
+}
+#sample_attach_menu_child
+{
+  border: 1px solid black;
+}
+/* Backend Page */
+#actiondiv
+{
+  width: 200px;
+  background: white;
+  border: 1px solid black;
+  padding-left: 10px;
+  margin-left: 10px;
+}
+
+#actiondiv ul
+{
+  padding-left: 20px;
+}

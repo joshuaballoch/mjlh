@@ -1,0 +1,1 @@
+<div align="center"><img src="images/misc/operation_poster.jpg"></div><br>

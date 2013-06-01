@@ -1,0 +1,122 @@
+<script language="javascript">
+function findPosX(obj)
+  {
+    var curleft = 0;
+    if(obj.offsetParent)
+        while(1) 
+        {
+          curleft += obj.offsetLeft;
+          if(!obj.offsetParent)
+            break;
+          obj = obj.offsetParent;
+        }
+    else if(obj.x)
+        curleft += obj.x;
+    return curleft;
+  }
+
+function findPosY(obj)
+  {
+    var curtop = 0;
+    if(obj.offsetParent)
+        while(1)
+        {
+          curtop += obj.offsetTop;
+          if(!obj.offsetParent)
+            break;
+          obj = obj.offsetParent;
+        }
+    else if(obj.y)
+        curtop += obj.y;
+    return curtop;
+  }
+  
+          function show_submenu(trigger,id)
+        {
+                if (trigger != id)
+                {
+
+                        posX=findPosX(trigger);
+                        posY=findPosY(trigger);
+                        document.getElementById(id).style.left=posX+'px';
+                        document.getElementById(id).style.top=posY+'px';
+                }
+                document.getElementById(id).style.visibility='visible';
+        }
+        
+        function hide_menu(id)
+        {
+                 document.getElementById(id).style.visibility='hidden';
+        }
+        
+        function jump_to(page)
+        {
+                page = "page.php?id=" + page;
+                window.location = page;
+        }
+</script>
+
+<div class="submenu" id="submenu1" style="visibility:hidden" onmousemove="show_submenu('submenu1','submenu1');" onmouseout="hide_menu('submenu1');">
+<table width="115" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td style="background:none;background-image:none;height:18px;border:none;" onclick="window.location='page.php?id=main';"></td>
+  </tr>
+  <tr>
+    <td onclick="jump_to('browser_mjlh3');">Current Issue</td>
+  </tr>   
+  <tr>
+    <td onclick="window.location='page.php?id=events&r=1';">Events</td>
+  </tr>
+  <tr>
+    <td onclick="jump_to('donate');">Donations</td>
+  </tr>
+</table>
+</div>
+
+<div class="submenu" id="submenu2" style="visibility:hidden" onmousemove="show_submenu('submenu2','submenu2');" onmouseout="hide_menu('submenu2');">
+<table width="115" border="0" cellspacing="0" cellpadding="3">
+    <tr>
+    <td style="background:none;background-image:none;height:18px;border:none; cursor:default;"></td>
+  </tr>
+   <tr>
+    <td bgcolor="#FFFFFF" onclick="jump_to('forum');">What is the Forum?</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFFF" onclick="jump_to('submit_comment');">Submit a Comment</td>
+  </tr> 
+  <tr>
+    <td bgcolor="#FFFFFF" onclick="jump_to('visit_forum');">Visit the Forum</td>
+  </tr>
+</table>
+</div>
+
+<div class="submenu" id="submenu3" style="visibility:hidden" onmousemove="show_submenu('submenu3','submenu3');" onmouseout="hide_menu('submenu3');">
+<table width="115" border="0" cellspacing="0" cellpadding="3">
+    <tr>
+    <td style="background:none;background-image:none;height:18px;border:none; cursor:default;"></td>
+  </tr>
+
+  <tr>
+    <td bgcolor="#FFFFFF" onclick="jump_to('mast2009-2010');">Current Masthead</td>
+  </tr>
+   <tr>
+    <td bgcolor="#FFFFFF" onclick="jump_to('mast-list');">Past Mastheads</td>
+  </tr>
+</table>
+</div>
+
+
+<div class="submenu" id="submenu5" style="visibility:hidden" onmousemove="show_submenu('submenu5','submenu5');" onmouseout="hide_menu('submenu5');">
+<table width="115" border="0" cellspacing="0" cellpadding="3">
+    <tr>
+    <td style="background:none;background-image:none;height:18px;border:none;cursor:default;"></td>
+  </tr>
+    <tr>
+      <td bgcolor="#FFFFFF" onclick="jump_to('resources');">Health Law resources</td>
+    </tr>
+  <tr>
+    <td bgcolor="#FFFFFF" onclick="jump_to('links');">Links</td>
+  </tr>
+</table>
+</div>
+

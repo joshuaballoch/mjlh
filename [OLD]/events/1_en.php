@@ -1,0 +1,1 @@
+<div align="center"><img src="images/misc/MHLP_launch.jpg"></div><br>
