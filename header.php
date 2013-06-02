@@ -35,7 +35,6 @@
     <head>
         <title><?php talk("McGill Journal of Law and Health","Revue de droit et sant&eacute; de McGill",$lang); ?></title>
         <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1" >
-        <meta name="test2" content="adsf">
         <meta name="description" content= "McGill Journal of Law and Health | Revue de droit et sant&eacute; de McGill | McGill University - Montreal, Quebec, Canada">
         <meta name="keywords" content="McGill,university,health,journal,law,college,canada,academic">
         <meta name="copyright" content="Copyright (C) 2010">
