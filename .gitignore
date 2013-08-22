@@ -2,3 +2,5 @@ secure/
 .git/
 [OLD]/
 [OLD]/*
+ckeditor/
+ckeditor/*
