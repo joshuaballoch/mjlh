@@ -4,7 +4,7 @@
 
      // dbconnect.php is located outside the public_html folder to protect DB passwords
      //We can call GetMyConnection() and CloseMyConnection() in the rest of the code to get the link
-     require_once "secure/dbconnect.php";
+     require_once $_SERVER["DOCUMENT_ROOT"]."/secure/dbconnect.php";
      //Input and language handling routines
      require_once "func.php";
 
