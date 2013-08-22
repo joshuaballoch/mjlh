@@ -12,7 +12,7 @@ a, a:link, a:visited { text-decoration: none; color: #C0272C; }
 a:hover { text-decoration: underline; }
 
 img
-{ 
+{
   border: none;
 }
 
@@ -256,7 +256,7 @@ input, textarea, select
   border: 1px solid #CCCCCC;
   margin: 5px;
   padding: 5px;
-  padding-bottom: 0px; 
+  padding-bottom: 0px;
   background:#EEEEEE;
 }
 
@@ -344,7 +344,7 @@ a.sample_attach, a.sample_attach:visited
 }
 div.sample_attach
 {
-  
+
   text-decoration: none;
   color: #C0272C;
   font-weight:bold;
