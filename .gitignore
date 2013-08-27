@@ -4,3 +4,4 @@ secure/
 [OLD]/**
 ckeditor/
 ckeditor/*
+*.DS_Store
