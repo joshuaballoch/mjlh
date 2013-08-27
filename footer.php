@@ -6,10 +6,17 @@
           <div id="footer-inner" class="container">
             <div class="row">
               <div class="col-md-3">
-                ABOUT
+                <a href="page.php?id=about" rel="aboutsubmenu"><?php talk("ABOUT THE MJLH","ÀPROPOS DE LA RDSM",$lang); ?></a>
+                <ul>
+                  <li><a href="masthead.php"><?php talk("Mastheads","Comités de rédaction",$lang); ?></a></li>
+                  <li><a href="page.php?id=advisoryboard"><?php talk("Advisory Board","Comité consultatif",$lang); ?></a></li>
+                  <li><a href="page.php?id=recruitment"><?php talk("Student Recruitment","Étudiants de McGill",$lang); ?></a></li>
+                  <li><a href="page.php?id=subscriptions"><?php talk("Subscriptions","Abonnements",$lang); ?></a></li>
+                  <li><a href="page.php?id=donations"><?php talk("Donations","Dons",$lang); ?></a></li>
+                </ul>
               </div>
               <div class="col-md-3">
-                CONTACT
+                <a href="page.php?id=contact"><?php talk("CONTACT","NOUS JOINDRE",$lang); ?></a>
               </div>
               <div class="col-md-6">
                 More Infor
@@ -30,16 +37,6 @@
           <li><a href="page.php?id=colloquiumspeakers"><?php talk("Speakers","Conf&eacute;renciers",$lang); ?></a></li>
           <li><a href="page.php?id=colloquiumsched"><?php talk("Schedule","Programme",$lang); ?></a></li>
           </ul>
-
-          <!--'About the MJLH' Submenu-->
-          <ul id="aboutsubmenu" class="ddsubmenustyle">
-          <li><a href="masthead.php"><?php talk("Mastheads","Comit&eacute;s de r&eacute;daction",$lang); ?></a></li>
-          <li><a href="page.php?id=advisoryboard"><?php talk("Advisory Board","Comit&eacute; consultatif",$lang); ?></a></li>
-          <li><a href="page.php?id=recruitment"><?php talk("Student Recruitment","&Eacute;tudiants de McGill",$lang); ?></a></li>
-          <li><a href="page.php?id=subscriptions"><?php talk("Subscriptions","Abonnements",$lang); ?></a></li>
-          <li><a href="page.php?id=donations"><?php talk("Donations","Dons",$lang); ?></a></li>
-          </ul>
-
 
       <script type="text/javascript">
       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

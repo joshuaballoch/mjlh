@@ -84,8 +84,6 @@
               <li><a href="blog.php"><?php talk("MJLH Online","&nbsp;RDSM en ligne&nbsp;",$lang); ?></a></li>
               <li><a href="page.php?id=colloquiumhome" rel = "colloquiumsubmenu"><?php talk("Colloquium","&nbsp;Colloque&nbsp;",$lang); ?></a></li>
               <li><a href="page.php?id=submissions"><?php talk("Submissions","Soumissions",$lang); ?></a></li>
-              <li><a href="page.php?id=about" rel="aboutsubmenu"><?php talk("About the MJLH","&Aacute; propos de la RDSM",$lang); ?></a></li>
-              <li><a href="page.php?id=contact"><?php talk("Contact","&nbsp;&nbsp;Nous joindre&nbsp;&nbsp;",$lang); ?></a></li>
             </ul>
           </nav>
         </div>
