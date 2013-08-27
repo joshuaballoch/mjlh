@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
-   "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <?php
 
      // dbconnect.php is located outside the public_html folder to protect DB passwords
@@ -31,16 +30,23 @@
      setcookie("lang", $lang, $expire);
 ?>
 <?php talk("","",$lang); ?>
-<html>
+<html> <!-- ends in footer.php -->
     <head>
         <title><?php talk("McGill Journal of Law and Health","Revue de droit et sant&eacute; de McGill",$lang); ?></title>
-        <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1" >
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
         <meta name="description" content= "McGill Journal of Law and Health | Revue de droit et sant&eacute; de McGill | McGill University - Montreal, Quebec, Canada">
         <meta name="keywords" content="McGill,university,health,journal,law,college,canada,academic">
         <meta name="copyright" content="Copyright (C) 2010">
 
+        <!-- Assets -->
+        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" media="all">
+        <script type="text/javascript" src="vendor/jquery.js"></script>
+        <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-        <link rel="stylesheet" type="text/css" href="http://mjlh.mcgill.ca/css/mjlh.css" media="all">
+        <!-- FIXME: check this link before push!! -->
+        <link rel="stylesheet" type="text/css" href="css/mjlh.css" media="all">
+
+
         <link rel="shortcut icon" href="/favicon.ico">
         <link rel="icon" type="image/ico" href="/favicon.ico">
 
@@ -55,41 +61,28 @@
         * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
         ***********************************************/
         </script>
-         <!--
-        <script type="text/javascript" src="http://www.mcgillswimming.ca/js/basic.js">
-        /**Basic Script Function Library**/
-        </script>  -->
-
-        <!-- End menu stuff -->
 
         <?php if (isset($headtext)) echo $headtext; ?>
 
     </head>
-    <body>
-    <div id = "topdiv">
-         <div id = "top-innerdiv">
-              <a href = "index.php"><img src = "/images/mjlh-logo.jpg" alt = "MJLH | RDSM"></a>
-              <span id = "bannertext"><?php talk("McGill Journal of<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Law and Health","Revue de droit<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;et sant&eacute; de McGill",$lang);?></span>
-              <span id = "languagelink"><?php echo getSwitchLanguageLink($lang); ?></span>
+    <body> <!-- ends in footer.php -->
+      <header>
+        <div id="header-inner">
+        <h1> The McGill Journal of Law & Health </h1>
+        <nav >
+          <ul class="nav">
+            <li><a class="active" href="index.php"><?php talk("Home","&nbsp;Accueil&nbsp;",$lang); ?></a></li>
+            <li><a href="volumes.php"><?php talk("Current & Past Volumes","&nbsp;Volumes&nbsp;",$lang); ?></a></li>
+            <li><a href="blog.php"><?php talk("MJLH Online","&nbsp;RDSM en ligne&nbsp;",$lang); ?></a></li>
+            <li><a href="page.php?id=colloquiumhome" rel = "colloquiumsubmenu"><?php talk("Colloquium","&nbsp;Colloque&nbsp;",$lang); ?></a></li>
+            <li><a href="page.php?id=submissions"><?php talk("Submissions","Soumissions",$lang); ?></a></li>
+            <li><a href="page.php?id=about" rel="aboutsubmenu"><?php talk("About the MJLH","&Aacute; propos de la RDSM",$lang); ?></a></li>
+            <li><a href="page.php?id=contact"><?php talk("Contact","&nbsp;&nbsp;Nous joindre&nbsp;&nbsp;",$lang); ?></a></li>
+           </ul>
+          </nav>
+        </div>
+      </header>
 
-              <!-- Main Menu (Sub Menus are declared in Footer  -->
-              <span id="menubar" class="mjlhmenu">
-                <ul>
-                  <li><a href="index.php"><?php talk("Home","&nbsp;Accueil&nbsp;",$lang); ?></a></li>
-                  <li><a href="volumes.php"><?php talk("Current & Past Volumes","&nbsp;Volumes&nbsp;",$lang); ?></a></li>
-                  <li><a href="blog.php"><?php talk("MJLH Online","&nbsp;RDSM en ligne&nbsp;",$lang); ?></a></li>
-                  <li><a href="page.php?id=colloquiumhome" rel = "colloquiumsubmenu"><?php talk("Colloquium","&nbsp;Colloque&nbsp;",$lang); ?></a></li>
-                  <li><a href="page.php?id=submissions"><?php talk("Submissions","Soumissions",$lang); ?></a></li>
-                  <li><a href="page.php?id=about" rel="aboutsubmenu"><?php talk("About the MJLH","&Aacute; propos de la RDSM",$lang); ?></a></li>
-                  <li><a href="page.php?id=contact"><?php talk("Contact","&nbsp;&nbsp;Nous joindre&nbsp;&nbsp;",$lang); ?></a></li>
-                 </ul>
-              </span>
-
-              <script type="text/javascript">
-              ddlevelsmenu.setup("menubar", "topbar") //ddlevelsmenu.setup("mainmenuid", "topbar|sidebar")
-              </script>
-         </div>
-    </div>
-    <div id = "maindiv">
-         <div id = "main-innerdiv">
+    <div id="container">
+         <div class= "container">
 

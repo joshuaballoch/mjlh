@@ -2,14 +2,20 @@
 
 body
 {
-   background-color: #C09497;
+   background-color: #eee;
    font-family: Arial, Sans-serif;
    font-size: 11px;
    margin: 0px;
 }
 
-a, a:link, a:visited { text-decoration: none; color: #C0272C; }
-a:hover { text-decoration: underline; }
+a, a:link, a:visited {
+  text-decoration: none;
+  color: #5f5f5f;
+}
+
+a:hover {
+  color:#cc0000;
+}
 
 img
 {
@@ -62,29 +68,56 @@ input, textarea, select
 }
 
 /*--------Main Layout (Header/Footer Referenced)-------*/
-#topdiv
-{
-  margin: 0px auto;
-  width: 968px;
-  height: 136px;
-  background-image: url(/images/bg_top.jpg);
-  background-repeat:no-repeat;
-  background-color: #FFFFFF;
-
+header {
+  width:100%;
+  height:75px;
+  background:#fff;
+  border-bottom:1px solid #dfdfdf;
+  margin-bottom: 20px;
+  padding-top:16px;
 }
 
-#maindiv
-{
-  margin: 0px auto;
-  width: 968px;
-  background-image: url(/images/bg_mid.jpg);
-  background-repeat:repeat-y;
-  background-color: #FFFFFF;
-  /*border-top: 1px solid black;*/
+header #header-inner {
+  width:940px;
+  margin:0 auto;
 }
 
-#bottomdiv
-{
+header h1 {
+  margin-bottom:0px;
+}
+
+header nav {
+  height:30px;
+  position:relative;
+}
+
+header nav ul {
+  height:100%;
+}
+
+header ul.nav li {
+  display:inline-block;
+}
+header ul.nav li a {
+  text-transform:uppercase;
+  font-weight:600;
+  height:30px;
+}
+.nav>li>a:hover, .nav>li>a.active {
+  background:none;
+  color: #cc0000;
+  border-bottom:3px solid #cc0000;
+}
+
+.card {
+  background:#fff;
+  margin:0 -10px 20px 0;
+  width:100%;
+  padding:15px;
+  border:1px solid #dfdfdf;
+}
+
+footer {
   margin: 0px auto;
   width: 968px;
   height: 32px;
@@ -93,13 +126,12 @@ input, textarea, select
   background-color: #FFFFFF;
 }
 
-#top-innerdiv, #main-innerdiv, #bottom-innerdiv
-{
+#header-inner, #footer-inner {
   margin: 0px auto;
   height: 100%;
 }
 
-#top-innerdiv
+#header-inner
 {
   padding-left:2px;
   width: 950px;
@@ -107,9 +139,6 @@ input, textarea, select
   position: relative;   /*Makes this div a 'containing block', which
                           lets us use absolute to position text in languagelink*/
 }
-
-#top-innerdiv a, #top-innerdiv a:link, #top-innerdiv a:visited { color: white; }
-
 
 #languagelink
 {
@@ -138,7 +167,7 @@ input, textarea, select
   left: 266px;
 }
 
-#main-innerdiv, #bottom-innerdiv
+#footer-inner
 {
   width: 944px;
   padding: 5px 3px;
@@ -187,7 +216,7 @@ input, textarea, select
 }
 
 /*Home Page*/
-#announcements, #homeblog, #homelinkbar
+#announcements
 {
   float: left;
   border: 1px solid black;
@@ -203,29 +232,6 @@ input, textarea, select
   font-size: 12px;
   padding-right: 10px;
   width: 460px;
-}
-#homeblog, #homelinkbar
-{
-  clear: both;
-  background: #FFFFFF;
-
-}
-#homeblog
-{
-  border: none;
-}
-#homeblog h1
-{
- margin-top: 2px;
-}
-
-#homelinkbar
-{
- /* border: 1px solid #CCCCCC;*/
- border: none;
-  padding-top: 1px;
-  padding-bottom: 1px;
-  text-align: center;
 }
 
 #announcements ul
@@ -260,13 +266,7 @@ input, textarea, select
   background:#EEEEEE;
 }
 
-#homeblog h1
-{
-  margin-top: 10px;
-   margin-bottom: 15px;
-}
-
-#homeblog h2, #blogcontentscell h2
+#blogcontentscell h2
 {
    text-transform: none;
    letter-spacing: 1px;

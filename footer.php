@@ -1,11 +1,11 @@
 
-         </div>      <!--main-innerdiv-->
-    </div>           <!--maindiv-->
-    <div id = "bottomdiv">
-         <div id = "bottom-innerdiv">
+         </div>      <!--container-inner-->
+    </div>           <!--container-->
+    <footer>
+         <div id = "footer-inner">
 
          </div>
-    </div>
+    </footer>
 
           <!--HTML for the Drop Down Menus associated with Top Menu Bar-->
           <!--They should be inserted OUTSIDE any element other than the BODY tag itself-->
@@ -38,5 +38,5 @@
       </script>
 
 
-    </body>
-</html>
+    </body> <!-- starts in header.php -->
+</html> <!-- starts in header.php -->
