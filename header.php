@@ -46,6 +46,12 @@
         <!-- FIXME: check this link before push!! -->
         <link rel="stylesheet" type="text/css" href="css/mjlh.css" media="all">
 
+        <!-- sticky footer solution for IE -->
+        <!--[if !IE 7]>
+          <style type="text/css">
+            #wrap {display:table;height:100%}
+          </style>
+        <![endif]-->
 
         <link rel="shortcut icon" href="/favicon.ico">
         <link rel="icon" type="image/ico" href="/favicon.ico">
@@ -67,19 +73,20 @@
 
     </head>
     <body> <!-- ends in footer.php -->
+      <div id="wrap"> <!-- dummy for sticky footer soln, ends in footer.php -->
       <header>
-        <div id="header-inner">
-        <h1> The McGill Journal of Law & Health </h1>
-        <nav >
-          <ul class="nav">
-            <li><a class="active" href="index.php"><?php talk("Home","&nbsp;Accueil&nbsp;",$lang); ?></a></li>
-            <li><a href="volumes.php"><?php talk("Current & Past Volumes","&nbsp;Volumes&nbsp;",$lang); ?></a></li>
-            <li><a href="blog.php"><?php talk("MJLH Online","&nbsp;RDSM en ligne&nbsp;",$lang); ?></a></li>
-            <li><a href="page.php?id=colloquiumhome" rel = "colloquiumsubmenu"><?php talk("Colloquium","&nbsp;Colloque&nbsp;",$lang); ?></a></li>
-            <li><a href="page.php?id=submissions"><?php talk("Submissions","Soumissions",$lang); ?></a></li>
-            <li><a href="page.php?id=about" rel="aboutsubmenu"><?php talk("About the MJLH","&Aacute; propos de la RDSM",$lang); ?></a></li>
-            <li><a href="page.php?id=contact"><?php talk("Contact","&nbsp;&nbsp;Nous joindre&nbsp;&nbsp;",$lang); ?></a></li>
-           </ul>
+        <div id="header-inner" class="container">
+          <h1> The McGill Journal of Law & Health </h1>
+          <nav >
+            <ul class="nav">
+              <li><a class="active" href="index.php"><?php talk("Home","&nbsp;Accueil&nbsp;",$lang); ?></a></li>
+              <li><a href="volumes.php"><?php talk("Current & Past Volumes","&nbsp;Volumes&nbsp;",$lang); ?></a></li>
+              <li><a href="blog.php"><?php talk("MJLH Online","&nbsp;RDSM en ligne&nbsp;",$lang); ?></a></li>
+              <li><a href="page.php?id=colloquiumhome" rel = "colloquiumsubmenu"><?php talk("Colloquium","&nbsp;Colloque&nbsp;",$lang); ?></a></li>
+              <li><a href="page.php?id=submissions"><?php talk("Submissions","Soumissions",$lang); ?></a></li>
+              <li><a href="page.php?id=about" rel="aboutsubmenu"><?php talk("About the MJLH","&Aacute; propos de la RDSM",$lang); ?></a></li>
+              <li><a href="page.php?id=contact"><?php talk("Contact","&nbsp;&nbsp;Nous joindre&nbsp;&nbsp;",$lang); ?></a></li>
+            </ul>
           </nav>
         </div>
       </header>

@@ -1,10 +1,23 @@
 
          </div>      <!--container-inner-->
     </div>           <!--container-->
+    </div> <!-- end #wrap for sticky footer -->
     <footer>
-         <div id = "footer-inner">
-
-         </div>
+          <div id="footer-inner" class="container">
+            <div class="row">
+              <div class="col-md-3">
+                ABOUT
+              </div>
+              <div class="col-md-3">
+                CONTACT
+              </div>
+              <div class="col-md-6">
+                More Infor
+              </div>
+            </div>
+          </div>
+        <div class="footer-shadow">
+        </div>
     </footer>
 
           <!--HTML for the Drop Down Menus associated with Top Menu Bar-->

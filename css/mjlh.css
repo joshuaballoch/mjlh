@@ -77,11 +77,6 @@ header {
   padding-top:16px;
 }
 
-header #header-inner {
-  width:940px;
-  margin:0 auto;
-}
-
 header h1 {
   margin-bottom:0px;
 }
@@ -118,26 +113,34 @@ header ul.nav li a {
 }
 
 footer {
-  margin: 0px auto;
-  width: 968px;
-  height: 32px;
-  background-image: url(/images/bg_bottom.jpg);
-  background-repeat:no-repeat;
-  background-color: #FFFFFF;
+  /* set height at bottom of mjlh.css with sticky footer decl */
+  background-color: #666666;
+  border-top:1px solid #fff;
+  -moz-box-shadow: 10px 10px 5px #888;
+  -webkit-box-shadow: 10px 10px 5px #888;
+  box-shadow: 10px 10px 5px #888;
+  overflow:hidden;
+  color:#f5f5f5;
+}
+footer .footer-shadow {
+  width:200%;
+  margin-top:-119px;
+  height:130px;
+  box-shadow: inset 0px 4px 50px #333;
+}
+
+#footer-inner
+{
+  padding: 5px 3px;
 }
 
 #header-inner, #footer-inner {
-  margin: 0px auto;
   height: 100%;
 }
 
 #header-inner
 {
   padding-left:2px;
-  width: 950px;
-  color: white;
-  position: relative;   /*Makes this div a 'containing block', which
-                          lets us use absolute to position text in languagelink*/
 }
 
 #languagelink
@@ -165,13 +168,6 @@ footer {
   position: absolute;
   top: 113px;
   left: 266px;
-}
-
-#footer-inner
-{
-  width: 944px;
-  padding: 5px 3px;
-  border-top: 1px solid black;
 }
 
 #volumedetails
@@ -372,3 +368,39 @@ div.sample_attach
 {
   padding-left: 20px;
 }
+
+/*
+Sticky Footer Solution
+by Steve Hatcher
+http://stever.ca
+http://www.cssstickyfooter.com
+*/
+
+* {margin:0;padding:0;}
+
+/* must declare 0 margins on everything, also for main layout components use padding, not
+vertical margins (top and bottom) to add spacing, else those margins get added to total height
+and your footer gets pushed down a bit more, creating vertical scroll bars in the browser */
+
+html, body {height: 100%;}
+
+#wrap {min-height: 100%;}
+
+#container {overflow:auto;
+  padding-bottom: 120px;}  /* must be same height as the footer */
+
+footer {
+  position: relative;
+  margin-top: -120px; /* negative value of footer height */
+  height: 120px;
+  clear:both;}
+
+/*Opera Fix*/
+body:before {/* thanks to Maleika (Kohoutec)*/
+content:"";
+height:100%;
+float:left;
+width:0;
+margin-top:-32767px;/* thank you Erik J - negate effect of float*/
+}
+
