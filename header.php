@@ -51,6 +51,7 @@
         <link rel="icon" type="image/ico" href="/favicon.ico">
 
         <!-- Menu Stylesheets/Script -->
+        <!-- TO DO: DELETE THESE THREE FILES.. -->
         <link rel="stylesheet" type="text/css" href="http://mjlh.mcgill.ca/menu/ddlevelsmenu-base.css">
         <link rel="stylesheet" type="text/css" href="http://mjlh.mcgill.ca/menu/ddlevelsmenu-mjlhmenu.css">
 
