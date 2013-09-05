@@ -57,17 +57,6 @@
         <link rel="icon" type="image/ico" href="/favicon.ico">
 
         <!-- Menu Stylesheets/Script -->
-        <!-- TO DO: DELETE THESE THREE FILES.. -->
-        <link rel="stylesheet" type="text/css" href="http://mjlh.mcgill.ca/menu/ddlevelsmenu-base.css">
-        <link rel="stylesheet" type="text/css" href="http://mjlh.mcgill.ca/menu/ddlevelsmenu-mjlhmenu.css">
-
-        <script type="text/javascript" src="http://mjlh.mcgill.ca/menu/ddlevelsmenu.js">
-        /***********************************************
-        * All Levels Navigational Menu- (c) Dynamic Drive DHTML code library (http://www.dynamicdrive.com)
-        * This notice MUST stay intact for legal use
-        * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
-        ***********************************************/
-        </script>
 
         <?php if (isset($headtext)) echo $headtext; ?>
 
@@ -76,7 +65,7 @@
       <div id="wrap"> <!-- dummy for sticky footer soln, ends in footer.php -->
       <header>
         <div id="header-inner" class="container">
-          <h1> The McGill Journal of Law & Health </h1>
+          <h1><?php talk("THE McGILL JOURNAL OF LAW & HEALTH","REVUE DE DROIT ET SANTÉ DE McGILL",$lang); ?></h1>
           <nav >
             <ul class="nav">
               <li><a class="active" href="index.php"><?php talk("Home","&nbsp;Accueil&nbsp;",$lang); ?></a></li>
