@@ -3,9 +3,10 @@
 body
 {
    background-color: #eee;
-   font-family: Arial, Sans-serif;
+   font-family: Helvetica, Arial, Sans-serif;
    font-size: 11px;
    margin: 0px;
+   font-weight:200;
 }
 
 a, a:link, a:visited {
@@ -22,36 +23,41 @@ img
   border: none;
 }
 
+.centered-text {
+  text-align:center;
+}
+.centered-text h1, .centered-text h2, .centered-text h3, .centered-text h4, .centered-text h5 {
+  text-align: left;
+}
+
 h1, h2, h3, h4, legend
 {
   text-transform: uppercase;
   padding: 0px;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-top:5px;
+  margin-bottom: 5px;
   color: #191970;    /*midnight blue*/
 }
 
 h1
 {
-  letter-spacing: 3px;
   font-size: 18px;
+  font-weight:200;
+  letter-spacing: 2px;
 }
 
 h2
 {
-  letter-spacing: 3px;
   font-size: 14px;
 }
 
 h3
 {
-  letter-spacing: 2px;
   font-size: 12px;
 }
 
 h4, legend
 {
-  letter-spacing: 2px;
   font-size: 11px;
 }
 
@@ -70,15 +76,18 @@ input, textarea, select
 /*--------Main Layout (Header/Footer Referenced)-------*/
 header {
   width:100%;
-  height:75px;
+  height:125px;
   background:#fff;
-  border-bottom:1px solid #dfdfdf;
+  background-image:url(/images/grey_grid.png);
+  border-bottom:2px solid #cc0000; /* #dfdfdf */
   margin-bottom: 20px;
-  padding-top:16px;
+  padding-top:46px;
 }
 
 header h1 {
   margin-bottom:0px;
+  text-transform: none;
+  font-size:30px;
 }
 
 header nav {
@@ -95,13 +104,13 @@ header ul.nav li {
 }
 header ul.nav li a {
   text-transform:uppercase;
-  font-weight:600;
+  font-size:12px;
   height:30px;
 }
 .nav>li>a:hover, .nav>li>a.active {
   background:none;
   color: #cc0000;
-  border-bottom:3px solid #cc0000;
+  /* border-bottom:3px solid #cc0000; */
 }
 
 .card {

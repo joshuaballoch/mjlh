@@ -6,7 +6,7 @@
           <div id="footer-inner" class="container">
             <div class="row">
               <div class="col-md-3">
-                <a href="page.php?id=about" rel="aboutsubmenu"><?php talk("ABOUT THE MJLH","ÀPROPOS DE LA RDSM",$lang); ?></a>
+                <h3><a href="page.php?id=about" rel="aboutsubmenu"><?php talk("ABOUT THE MJLH","ÀPROPOS DE LA RDSM",$lang); ?></a></h3>
                 <ul>
                   <li><a href="masthead.php"><?php talk("Mastheads","Comités de rédaction",$lang); ?></a></li>
                   <li><a href="page.php?id=advisoryboard"><?php talk("Advisory Board","Comité consultatif",$lang); ?></a></li>
@@ -16,10 +16,24 @@
                 </ul>
               </div>
               <div class="col-md-3">
-                <a href="page.php?id=contact"><?php talk("CONTACT","NOUS JOINDRE",$lang); ?></a>
+                <h3><a href="page.php?id=contact"><?php talk("CONTACT","NOUS JOINDRE",$lang); ?></a></h3>
+                <!--
+                  <?php talk("McGill Journal of Law & Health","Revue de Droit et Santé de McGill",$lang); ?><br>
+                  <?php talk("Faculty of Law - McGill University","Faculté de Droit - Université McGill",$lang); ?><br>
+                  <?php talk("3644 Peel Street, Rm. 305","3644, Rue Peel, Bureau 305",$lang); ?><br>
+                  Montréal, Quebec H3A 1W9 <br>
+                  Tel.: (514) 398-5960<br>
+                -->
+                <ul>
+                  <li><?php talk("McGill Journal of Law & Health","Revue de Droit et Santé de McGill",$lang); ?></li>
+                  <li><?php talk("Faculty of Law - McGill University","Faculté de Droit - Université McGill",$lang); ?></li>
+                  <li><?php talk("3644 Peel Street, Rm. 305","3644, Rue Peel, Bureau 305",$lang); ?></li>
+                  <li>Montréal, Quebec H3A 1W9</li>
+                  <li>Tel.: (514) 398-5960</li>
+                </ul>
               </div>
               <div class="col-md-6">
-                More Infor
+                <h3>More Infor</h3>
               </div>
             </div>
           </div>
