@@ -93,11 +93,16 @@ header {
   display:inline-block;
   margin-right:5px;
   margin-bottom:-4px;
+  margin-left:5px;
 }
 
 header h1 {
   margin-bottom:0px;
   text-transform: none;
+  font-size:30px;
+}
+
+header h1.small {
   font-size:30px;
 }
 
