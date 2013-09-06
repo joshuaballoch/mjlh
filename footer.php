@@ -16,7 +16,7 @@
                 </ul>
               </div>
               <div class="col-md-3">
-                <h3><a href="page.php?id=contact"><?php talk("CONTACT","NOUS JOINDRE",$lang); ?></a></h3>
+                <h3><a href="page.php?id=contact"><?php talk("CONTACT US","NOUS JOINDRE",$lang); ?></a></h3>
                 <!--
                   <?php talk("McGill Journal of Law & Health","Revue de Droit et Santé de McGill",$lang); ?><br>
                   <?php talk("Faculty of Law - McGill University","Faculté de Droit - Université McGill",$lang); ?><br>
