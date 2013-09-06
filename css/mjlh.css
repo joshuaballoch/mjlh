@@ -54,6 +54,7 @@ h2
 h3
 {
   font-size: 12px;
+  font-weight:400;
 }
 
 h4, legend
@@ -81,7 +82,17 @@ header {
   background-image:url(/images/grey_grid.png);
   border-bottom:2px solid #cc0000; /* #dfdfdf */
   margin-bottom: 20px;
-  padding-top:46px;
+  padding-top:56px;
+}
+
+.mjlh-logo {
+  background-image:url(/images/mjlh.png);
+  background-size:contain;
+  height:31px;
+  width: 31px;
+  display:inline-block;
+  margin-right:5px;
+  margin-bottom:-4px;
 }
 
 header h1 {
@@ -133,8 +144,8 @@ footer {
 }
 
 .footer-follow-me {
-  font-size:40px;
-  padding-top:7px;
+  font-size:37px;
+  padding-top:13px;
   padding-left:5px;
 }
 footer a:link, footer a, footer a:visited, footer h3 {

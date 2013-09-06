@@ -71,7 +71,7 @@
       <div id="wrap"> <!-- dummy for sticky footer soln, ends in footer.php -->
       <header>
         <div id="header-inner" class="container">
-          <h1><?php talk("THE McGILL JOURNAL OF LAW & HEALTH","REVUE DE DROIT ET SANTÉ DE McGILL",$lang); ?></h1>
+          <h1><div class="mjlh-logo"></div><?php talk("THE McGILL JOURNAL OF LAW & HEALTH","REVUE DE DROIT ET SANTÉ DE McGILL",$lang); ?></h1>
           <nav >
             <ul class="nav">
               <li><a class="active" href="index.php"><?php talk("Home","&nbsp;Accueil&nbsp;",$lang); ?></a></li>
