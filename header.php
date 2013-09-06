@@ -46,6 +46,12 @@
         <!-- FIXME: check this link before push!! -->
         <link rel="stylesheet" type="text/css" href="css/mjlh.css" media="all">
 
+        <!-- Icon Fonts -->
+        <link rel="stylesheet" href="vendor/fontello-css/fontello.css">
+        <!--[if IE 7]>
+        <link rel="stylesheet" href="vendor/fontello-css/fontello-ie7.css"><![endif]-->
+
+
         <!-- sticky footer solution for IE -->
         <!--[if !IE 7]>
           <style type="text/css">

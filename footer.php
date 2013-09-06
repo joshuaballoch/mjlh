@@ -34,6 +34,7 @@
               </div>
               <div class="col-md-6">
                 <h3>More Infor</h3>
+                <div class="glyphicon glyphicon-inbox"></div>
               </div>
             </div>
           </div>
