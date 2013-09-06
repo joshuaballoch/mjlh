@@ -33,8 +33,12 @@
                 </ul>
               </div>
               <div class="col-md-6">
-                <h3>More Infor</h3>
-                <div class="glyphicon glyphicon-inbox"></div>
+                <h3><?php talk("FOLLOW THE MJLH","SUIVEZ LE RDSM",$lang); ?> </h3>
+                <div class="footer-follow-me">
+                  <i class="icon-facebook-squared"></i>
+                  <i class="icon-twitter-squared"></i>
+                  <i class="icon-linkedin-squared"></i>
+                </div>
               </div>
             </div>
           </div>
