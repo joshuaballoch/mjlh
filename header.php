@@ -37,6 +37,7 @@
         <meta name="description" content= "McGill Journal of Law and Health | Revue de droit et sant&eacute; de McGill | McGill University - Montreal, Quebec, Canada">
         <meta name="keywords" content="McGill,university,health,journal,law,college,canada,academic">
         <meta name="copyright" content="Copyright (C) 2010">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- Assets -->
         <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" media="all">
@@ -62,6 +63,9 @@
         <link rel="shortcut icon" href="/favicon.ico">
         <link rel="icon" type="image/ico" href="/favicon.ico">
 
+        <!-- JavaScript Assets -->
+        <script type="text/javascript" src="js/responsive.js"></script>
+
         <!-- Menu Stylesheets/Script -->
 
         <?php if (isset($headtext)) echo $headtext; ?>
@@ -71,7 +75,8 @@
       <div id="wrap"> <!-- dummy for sticky footer soln, ends in footer.php -->
       <header>
         <div id="header-inner" class="container">
-          <h1><div class="mjlh-logo"></div><?php talk("THE McGILL JOURNAL OF LAW & HEALTH","REVUE DE DROIT ET SANTÉ DE McGILL",$lang); ?></h1>
+          <h1 class="hidden-xs"><div class="mjlh-logo"></div><?php talk("THE McGILL JOURNAL OF LAW & HEALTH","REVUE DE DROIT ET SANTÉ DE McGILL",$lang); ?></h1>
+          <h1 class="visible-xs small"><div class="mjlh-logo"></div><?php talk("THE McGILL JOURNAL OF LAW & HEALTH","REVUE DE DROIT ET SANTÉ DE McGILL",$lang); ?></h1>
           <nav >
             <ul class="nav">
               <li><a class="active" href="index.php"><?php talk("Home","&nbsp;Accueil&nbsp;",$lang); ?></a></li>
