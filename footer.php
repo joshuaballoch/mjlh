@@ -35,9 +35,9 @@
               <div class="col-md-6">
                 <h3><?php talk("FOLLOW THE MJLH","SUIVEZ LE RDSM",$lang); ?> </h3>
                 <div class="footer-follow-me">
-                  <i class="icon-facebook-squared"></i>
-                  <i class="icon-twitter-squared"></i>
-                  <i class="icon-linkedin-squared"></i>
+                  <a href="javascript:void(0)" target="_blank"><i class="icon-facebook-squared"></i></a>
+                  <a href="javascript:void(0)" target="_blank"><i class="icon-twitter-squared"></i></a>
+                  <a href="javascript:void(0)" target="_blank"><i class="icon-linkedin-squared"></i></a>
                 </div>
               </div>
             </div>
