@@ -30,7 +30,7 @@
                 <div class="footer-follow-me">
                   <a href="https://www.facebook.com/McGillJLH" target="_blank"><i class="icon-facebook-squared"></i></a>
                   <a href="https://twitter.com/McGill_JLH" target="_blank"><i class="icon-twitter-squared"></i></a>
-                  <a href="javascript:void(0)" target="_blank"><i class="icon-linkedin-squared"></i></a>
+                  <a href="http://www.linkedin.com/groups?gid=4714284&goback=%2Egmp_4714284" target="_blank"><i class="icon-linkedin-squared"></i></a>
                 </div>
               </div>
             </div>
