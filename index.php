@@ -3,7 +3,7 @@
       require_once "header.php";
 ?>
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-sm-8">
     <div class="card">
       <h1>
       <?php talk("MJLH Online","RDSM en ligne",$lang); ?>
@@ -32,7 +32,7 @@
           </div>
     </div>
   </div>
-  <div class="col-md-4">
+  <div class="col-sm-4">
     <div class="card">
       <h2>
         <?php talk("Announcements","Annonces",$lang); ?>
