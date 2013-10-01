@@ -8,29 +8,51 @@
       <h1>
       <?php talk("MJLH Online","RDSM en ligne",$lang); ?>
       </h1>
+    </div>
       <?php
-            $query = "SELECT BLOG_ID, TITLE, AUTHOR, DATE_FORMAT(BLOG_DATE,'%b. %e, %Y') as date,ENTRY FROM BLOGS order by BLOG_DATE desc limit 1";
-            $result = mysql_query($query, GetMyConnection()) or die('Error getting blog entry: ' . mysql_error());
-            $line = mysql_fetch_array($result);
+        $query = "SELECT BLOG_ID, TITLE, AUTHOR, DATE_FORMAT(BLOG_DATE,'%b. %e, %Y') as date,ENTRY FROM BLOGS order by BLOG_DATE desc limit 10";
+        $result = mysql_query($query, GetMyConnection()) or die('Error getting blog entry: ' . mysql_error());
+        if (mysql_num_rows($result)) {
+          while ($line = mysql_fetch_array($result)) {
+            echo "<div class=\"card\">";
             echo "<h2><a href = 'blog.php'>" . $line['TITLE'] . "</a></h2><div style = \"padding-bottom: 5px; border-bottom: 1px dotted black;\">\n";
             talk ("Posted By","Post&eacute; par",$lang);
             echo " <strong>" . $line['AUTHOR'] . "</strong> <i>(" . $line['date'] . ")</i></div>\n";
             echo "<div id = 'homeblogentry'>" . myTruncate($line['ENTRY'],800, " ","...") . "</div>";
+            echo "</div>";
+          }
+        }
 
-            $query = "SELECT count(*) from COMMENTS where SOURCE = 'b" . $line['BLOG_ID'] . "'";
-            $result = mysql_query($query, GetMyConnection()) or die('Error getting blog comment count: ' . mysql_error());
-            $line = mysql_fetch_array($result);
+
       ?>
-            <div id = 'homeblogfooter'>
-            <table width = '95%'><tr><td align = 'center'><strong><a href = 'blog.php'>
-            <?php talk("Read More >>","Lire la suite >>",$lang); ?>
-            </a></strong></td><td align = 'center'><a href = 'blog.php'><img src = "images/balloon-quotation.png" alt = "" >
-            <?php talk ("Comments (","Commentaires (",$lang); echo $line[0]; ?>)</a></td></tr>
-            <tr><td colspan = '2'><br><strong><a href = 'blog.php'>
-            <?php talk("Past Entries >>","Derni&egrave;res entr&eacute;es >>",$lang); ?>
-            </a></strong></td></tr></table>
-          </div>
-    </div>
+      <?php // Blog Posts Introduce Shitty HTML Formatting; This hack tries to contain them. ?>
+      </strong></b></strong></b></strong></b></strong></b>
+
+      <div class="paginator">
+        <div class="prev">
+          <a href="/?page=1">
+        </div>
+        <div class="next">
+          <a href="/?page=2">
+        </div>
+      </div>
+          <?php
+            // $query = "SELECT count(*) from COMMENTS where SOURCE = 'b" . $line['BLOG_ID'] . "'";
+            // $result = mysql_query($query, GetMyConnection()) or die('Error getting blog comment count: ' . mysql_error());
+            // $line = mysql_fetch_array($result);
+          ?>
+
+            <!-- <div id = 'homeblogfooter'>
+              <table width = '95%'><tr><td align = 'center'><strong><a href = 'blog.php'>
+              <?php talk("Read More >>","Lire la suite >>",$lang); ?>
+              </a></strong></td><td align = 'center'><a href = 'blog.php'><img src = "images/balloon-quotation.png" alt = "" >
+              <?php talk ("Comments (","Commentaires (",$lang); echo $line[0]; ?>)</a></td></tr>
+              <tr><td colspan = '2'><br><strong><a href = 'blog.php'>
+              <?php talk("Past Entries >>","Derni&egrave;res entr&eacute;es >>",$lang); ?>
+              </a></strong></td></tr></table>
+            </div>
+ -->
+
   </div>
   <div class="col-sm-4">
     <div class="card">
