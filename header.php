@@ -75,9 +75,11 @@
       <div id="wrap"> <!-- dummy for sticky footer soln, ends in footer.php -->
       <header>
         <div id="header-inner" class="container">
-          <h1 class="hidden-xs"><div class="mjlh-logo"></div><?php talk("THE McGILL JOURNAL OF LAW & HEALTH","REVUE DE DROIT ET SANTÉ DE McGILL",$lang); ?></h1>
-          <h1 class="visible-xs small"><div class="mjlh-logo"></div><?php talk("THE McGILL JOURNAL OF LAW & HEALTH","REVUE DE DROIT ET SANTÉ DE McGILL",$lang); ?></h1>
-          <nav >
+          <a href="/">
+            <h1 class="hidden-xs"><div class="mjlh-logo"></div><?php talk("THE McGILL JOURNAL OF LAW & HEALTH","REVUE DE DROIT ET SANTÉ DE McGILL",$lang); ?></h1>
+            <h1 class="visible-xs small"><div class="mjlh-logo"></div><?php talk("THE McGILL JOURNAL OF LAW & HEALTH","REVUE DE DROIT ET SANTÉ DE McGILL",$lang); ?></h1>
+          </a>
+          <nav>
             <ul class="nav">
               <li><a class="<?php if ($_SERVER["REQUEST_URI"] === "/index.php" || $_SERVER["REQUEST_URI"] === "/") echo "active" ;?>" href="index.php"><?php talk("Home","&nbsp;Accueil&nbsp;",$lang); ?></a></li>
               <li><a class="<?php if ($_SERVER["REQUEST_URI"] === "/volumes.php") echo "active" ;?>" href="volumes.php"><?php talk("Volumes","&nbsp;Volumes&nbsp;",$lang); ?></a></li>
