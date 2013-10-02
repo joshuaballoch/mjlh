@@ -32,31 +32,11 @@
 
 
       ?>
-      <?php // Blog Posts Introduce Shitty HTML Formatting; This hack tries to contain them. ?>
-      </strong></b></strong></b></strong></b></strong></b>
 
       <?php
         $paginated_table_name = "BLOGS";
-        require('components/shared/paginator.php');
+        require($_SERVER["DOCUMENT_ROOT"]."/components/shared/paginator.php");
       ?>
-
-          <?php
-            // $query = "SELECT count(*) from COMMENTS where SOURCE = 'b" . $line['BLOG_ID'] . "'";
-            // $result = mysql_query($query, GetMyConnection()) or die('Error getting blog comment count: ' . mysql_error());
-            // $line = mysql_fetch_array($result);
-          ?>
-
-            <!-- <div id = 'homeblogfooter'>
-              <table width = '95%'><tr><td align = 'center'><strong><a href = 'blog.php'>
-              <?php talk("Read More >>","Lire la suite >>",$lang); ?>
-              </a></strong></td><td align = 'center'><a href = 'blog.php'><img src = "images/balloon-quotation.png" alt = "" >
-              <?php talk ("Comments (","Commentaires (",$lang); echo $line[0]; ?>)</a></td></tr>
-              <tr><td colspan = '2'><br><strong><a href = 'blog.php'>
-              <?php talk("Past Entries >>","Derni&egrave;res entr&eacute;es >>",$lang); ?>
-              </a></strong></td></tr></table>
-            </div>
- -->
-
   </div>
   <div class="col-sm-4">
     <div class="card">
