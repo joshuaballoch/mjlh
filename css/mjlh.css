@@ -9,6 +9,10 @@ body
    font-weight:200;
 }
 
+.inline {
+  display:inline;
+}
+
 a, a:link, a:visited {
   text-decoration: none;
   color: #5f5f5f;
@@ -87,6 +91,7 @@ header {
 
 .mjlh-logo {
   background-image:url(/images/mjlh.png);
+  background-repeat: no-repeat;
   background-size:contain;
   height:31px;
   width: 31px;
@@ -122,6 +127,12 @@ header ul.nav li a {
   text-transform:uppercase;
   font-size:12px;
   height:30px;
+}
+
+header ul.nav .btn-group button.btn {
+  background:none;
+  height:20px;
+  width:10px;
 }
 .nav>li>a:hover, .nav>li>a.active {
   background:none;
@@ -450,4 +461,12 @@ margin-top:-32767px;/* thank you Erik J - negate effect of float*/
 /* Twitter Widget Fix */
 .twitter-timeline {
   width:100%;
+}
+
+/* paginator */
+ul.pagination {
+  width:63px;
+  height:30px;
+  display:block;
+  margin: 15px auto 20px auto;
 }

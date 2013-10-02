@@ -13,7 +13,7 @@
         }
         return $value;
     }
-    
+
     function getSwitchLanguageLink($currentLanguage) {
        //Put the current page URL in $pageURL
        $pageURL = 'http';
@@ -24,7 +24,7 @@
        } else {
         $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
        }
-      
+
        if ($currentLanguage == "en")
        {
          $newLanguage = "fr";
@@ -35,7 +35,7 @@
          $newLanguage = "en";
          $linkText = "English</a>&nbsp;";
        }
-      
+
        if (strrpos($pageURL, "?"))
        {
          if (stripos($pageURL, "lang="))
@@ -54,7 +54,7 @@
 
        return "<a href = '" . $pageURL . "'>" . $linkText;
     }
-    
+
     function talk($en, $fr, $myLanguage)
     {
        if ($myLanguage == "fr")
@@ -66,18 +66,18 @@
          print $en;
        }
     }
-    
-    // Original PHP code by Chirp Internet: www.chirp.com.au 
-    // Please acknowledge use of this code by including this header. 
-    function myTruncate($string, $limit, $break=".", $pad="...") 
-    { 
-      // return with no change if string is shorter than $limit  
-      if(strlen($string) <= $limit) return $string; 
-      // is $break present between $limit and the end of the string?  
-      if(false !== ($breakpoint = strpos($string, $break, $limit))) 
-      { 
-        if($breakpoint < strlen($string) - 1) { $string = substr($string, 0, $breakpoint) . $pad; } 
-      } 
-      return $string; 
+
+    // Original PHP code by Chirp Internet: www.chirp.com.au
+    // Please acknowledge use of this code by including this header.
+    function myTruncate($string, $limit, $break=".", $pad="...")
+    {
+      // return with no change if string is shorter than $limit
+      if(strlen($string) <= $limit) return $string;
+      // is $break present between $limit and the end of the string?
+      if(false !== ($breakpoint = strpos($string, $break, $limit)))
+      {
+        if($breakpoint < strlen($string) - 1) { $string = substr($string, 0, $breakpoint) . $pad; }
+      }
+      return $string;
     }
 ?>

@@ -10,7 +10,14 @@
       </h1>
     </div>
       <?php
-        $query = "SELECT BLOG_ID, TITLE, AUTHOR, DATE_FORMAT(BLOG_DATE,'%b. %e, %Y') as date,ENTRY FROM BLOGS order by BLOG_DATE desc limit 10";
+        $per_page = 10;
+
+        $query = "SELECT BLOG_ID, TITLE, AUTHOR, DATE_FORMAT(BLOG_DATE,'%b. %e, %Y') as date,ENTRY FROM BLOGS order by BLOG_DATE desc limit " . $per_page;
+        // Adjust query to deal with pagination!
+        if (isset($_REQUEST["page_id"]) && is_numeric($_REQUEST["page_id"])) {
+          $offset=$per_page*$_REQUEST["page_id"];
+          $query = $query . " OFFSET " . $offset;
+        }
         $result = mysql_query($query, GetMyConnection()) or die('Error getting blog entry: ' . mysql_error());
         if (mysql_num_rows($result)) {
           while ($line = mysql_fetch_array($result)) {
@@ -18,7 +25,7 @@
             echo "<h2><a href = 'blog.php'>" . $line['TITLE'] . "</a></h2><div style = \"padding-bottom: 5px; border-bottom: 1px dotted black;\">\n";
             talk ("Posted By","Post&eacute; par",$lang);
             echo " <strong>" . $line['AUTHOR'] . "</strong> <i>(" . $line['date'] . ")</i></div>\n";
-            echo "<div id = 'homeblogentry'>" . myTruncate($line['ENTRY'],800, " ","...") . "</div>";
+            echo "<div id = 'homeblogentry'>" . printTruncated(800,$line['ENTRY']) . "</div>";
             echo "</div>";
           }
         }
@@ -28,14 +35,11 @@
       <?php // Blog Posts Introduce Shitty HTML Formatting; This hack tries to contain them. ?>
       </strong></b></strong></b></strong></b></strong></b>
 
-      <div class="paginator">
-        <div class="prev">
-          <a href="/?page=1">
-        </div>
-        <div class="next">
-          <a href="/?page=2">
-        </div>
-      </div>
+      <?php
+        $paginated_table_name = "BLOGS";
+        require('components/shared/paginator.php');
+      ?>
+
           <?php
             // $query = "SELECT count(*) from COMMENTS where SOURCE = 'b" . $line['BLOG_ID'] . "'";
             // $result = mysql_query($query, GetMyConnection()) or die('Error getting blog comment count: ' . mysql_error());

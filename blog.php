@@ -16,7 +16,7 @@ echo "<div id = 'blogentry'>\n";
       $query = "SELECT BLOG_ID, TITLE, AUTHOR, DATE_FORMAT(BLOG_DATE,'%b. %e, %Y') as date,ENTRY FROM BLOGS ";
       $result = mysql_query($query.$whereclause, GetMyConnection()) or die('Error getting blog entry: ' . mysql_error());
       $line = mysql_fetch_array($result);
-      
+
       /*$runonce = true;
 
       $displayvolume = 0;
@@ -65,7 +65,7 @@ echo "<div id = 'blogentry'>\n";
       talk("Past Blog Entries","?????",$lang);
       echo ' <img src = "images/arrow-curve-270.png" align = "middle"></div>';
       echo '<div id="sample_attach_menu_child">';
-      
+
       echo '<a class="sample_attach" href="blog.php">Blog 1</a>';
 
       echo "</div>";  */
@@ -84,7 +84,7 @@ echo "<div id = 'blogentry'>\n";
       talk ("Posted By","Post&eacute; par",$lang);
       echo " <strong>" . $line['AUTHOR'] . "</strong> <i>(" . $line['date'] . ")</i></div>\n";
       echo "<div id = 'blogentrydiv'>" . $line['ENTRY'] . "</div>";
-      
+
       echo "</div>\n";
 
       echo "<div id = 'blogcommentsdiv'>\n";
@@ -116,7 +116,7 @@ echo "<div id = 'blogentry'>\n";
 
       echo "</div>";
       echo "</td><td valign = 'top'>";
-      
+
       echo "<div id = 'bloglistdiv'><h4>\n";
       talk ("Past Entries:","Derni&egrave;res entr&eacute;es:",$lang);
       echo "</h4>\n";
@@ -158,7 +158,7 @@ echo "<div id = 'blogentry'>\n";
          echo $line[0];
       }   */
 
-      
-      
+
+
       require_once "footer.php";
 ?>
