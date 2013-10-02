@@ -7,6 +7,6 @@
   echo "<div id = 'homeblogentry'>" . printTruncated(800,$line['ENTRY']) . "</div>";
 ?>
   <a class="read_more" href="<?php echo $read_more_link ?>" >
-    <?php talk("Read More","En Savoir Plus",$lang); ?>
+    <?php talk("Read more","En savoir plus",$lang); ?>
   </a>
   </div>

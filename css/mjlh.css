@@ -154,6 +154,7 @@ header ul.nav .btn-group button.btn {
 
 .card a.read_more {
   float:right;
+  font-style: italic;
 }
 
 footer {
