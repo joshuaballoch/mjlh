@@ -142,10 +142,15 @@ header ul.nav .btn-group button.btn {
 
 .card {
   background:#fff;
-  margin:0 -10px 20px 0;
+  margin:0 -10px 10px 0;
   width:100%;
   padding:15px;
   border:1px solid #dfdfdf;
+  overflow:hidden;
+}
+
+.card a.read_more {
+  float:right;
 }
 
 footer {

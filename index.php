@@ -21,12 +21,7 @@
         $result = mysql_query($query, GetMyConnection()) or die('Error getting blog entry: ' . mysql_error());
         if (mysql_num_rows($result)) {
           while ($line = mysql_fetch_array($result)) {
-            echo "<div class=\"card\">";
-            echo "<h2><a href = 'blog.php'>" . $line['TITLE'] . "</a></h2><div style = \"padding-bottom: 5px; border-bottom: 1px dotted black;\">\n";
-            talk ("Posted By","Post&eacute; par",$lang);
-            echo " <strong>" . $line['AUTHOR'] . "</strong> <i>(" . $line['date'] . ")</i></div>\n";
-            echo "<div id = 'homeblogentry'>" . printTruncated(800,$line['ENTRY']) . "</div>";
-            echo "</div>";
+            require $_SERVER["DOCUMENT_ROOT"]."/components/blog/post.php";
           }
         }
 
