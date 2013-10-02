@@ -5,7 +5,7 @@
 
      require_once $_SERVER["DOCUMENT_ROOT"]."/secure/dbconnect.php";
      //Input handling routines
-     require_once $_SERVER["DOCUMENT_ROOT"]."/func.php";
+     require_once $_SERVER["DOCUMENT_ROOT"]."/components/public_functions.php";
 
      $verified = "0";
      $msg = "Either the e-mail or password field was left blank. Please press Back and correct.";
@@ -33,7 +33,7 @@
         {
           $msg = "Login failed. Please press Back and check your e-mail and password.";
         }
-        
+
         //    INSERT INTO user_aes VALUES ('member1',AES_ENCRYPT('secretpassword',$AES_key) );
 //SELECT * FROM user_aes WHERE user_name='member1' AND password=AES_ENCRYPT('secretpassword','my_secret_key_to_encrypt');
      }

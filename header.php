@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <?php
-    // require "public functions" for commonly used functions
-    require_once "components/public_functions.php";
+
      // dbconnect.php is located outside the public_html folder to protect DB passwords
      //We can call GetMyConnection() and CloseMyConnection() in the rest of the code to get the link
      require_once $_SERVER["DOCUMENT_ROOT"]."/secure/dbconnect.php";
-     //Input and language handling routines
-     require_once "func.php";
+     // require "public functions" for commonly used functions
+     require_once $_SERVER["DOCUMENT_ROOT"]."/components/public_functions.php";
 
      $lang = "en";
      if ( array_key_exists ('lang',$_GET) && ($_GET['lang'] == "fr" || $_GET['lang'] == "en") )

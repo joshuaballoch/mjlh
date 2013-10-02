@@ -4,7 +4,7 @@
 <?php
      require_once $_SERVER["DOCUMENT_ROOT"]."/secure/dbconnect.php";
      //Input handling routines
-     require_once $_SERVER["DOCUMENT_ROOT"]."/func.php";
+     require_once $_SERVER["DOCUMENT_ROOT"]."/components/public_functions.php";
      require_once('recaptchalib.php');
 
      //Put the current page URL in $pageURL
@@ -32,7 +32,7 @@
      }
 
      echo "</head><body>\n";
-     
+
      $display_form = true;
      $msg = "";
 
@@ -44,7 +44,7 @@
                                         $_SERVER["REMOTE_ADDR"],
                                         $_POST["recaptcha_challenge_field"],
                                         $_POST["recaptcha_response_field"]);
-        
+
         if (!$resp->is_valid) {
           if ($lang == "fr")
           {
@@ -85,7 +85,7 @@
             }
         }
      }
-     
+
      if ($display_form)
      {
         ?>

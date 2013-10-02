@@ -2,7 +2,7 @@
 
      require_once $_SERVER["DOCUMENT_ROOT"]."/secure/dbconnect.php";
      //Input and language handling routines
-     require_once "func.php";
+     require_once $_SERVER["DOCUMENT_ROOT"]."/components/public_functions.php";
 
      if (array_key_exists('item', $_GET))
      {
