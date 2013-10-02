@@ -42,7 +42,7 @@
       <?php
         //Add the comments
         // MUST define identifier first
-        $disqus_identifier = "blogs".$_REQUEST['blog_id'];
+        $disqus_identifier = "blogs/".$_REQUEST['blog_id'];
         require $_SERVER["DOCUMENT_ROOT"]."/components/shared/comments.php";
       ?>
     </div>

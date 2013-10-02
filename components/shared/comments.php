@@ -2,7 +2,7 @@
 <script type="text/javascript">
   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
   var disqus_shortname = 'mjlh'; // required: replace example with your forum shortname
-  var disqus_identifier = '<?php echo $disqus_identifier ?>';
+  var disqus_identifier = '<?php echo $_SERVER["HTTP_HOST"]."/".$disqus_identifier ?>';
 
   /* * * DON'T EDIT BELOW THIS LINE * * */
   (function() {
