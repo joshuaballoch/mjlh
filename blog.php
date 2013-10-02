@@ -38,7 +38,13 @@
       <?php echo $line['ENTRY'] ?>
     </div>
     <div class="card">
-      <h4><?php talk ("COMMENTS","COMMENTAIRES",$lang) ?></h4>
+
+      <?php
+        //Add the comments
+        // MUST define identifier first
+        $disqus_identifier = "blogs".$_REQUEST['blog_id'];
+        require $_SERVER["DOCUMENT_ROOT"]."/components/shared/comments.php";
+      ?>
     </div>
   </div>
   <div class="col-sm-4">
