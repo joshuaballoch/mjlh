@@ -157,6 +157,11 @@ header ul.nav .btn-group button.btn {
   font-style: italic;
 }
 
+.card .card-share {
+  font-size:16px;
+  float:right;
+}
+
 footer {
   /* set height at bottom of mjlh.css with sticky footer decl */
   background-color: #666666;
