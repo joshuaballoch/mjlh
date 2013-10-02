@@ -134,6 +134,9 @@ header ul.nav .btn-group button.btn {
   height:20px;
   width:10px;
 }
+.nav>li>a {
+  padding: 10px 12px;
+}
 .nav>li>a:hover, .nav>li>a.active {
   background:none;
   color: #cc0000;
