@@ -29,7 +29,7 @@
       <head>
             <title>MJLH Website Administrative Backend</title>
             <link rel="stylesheet" type="text/css" href="http://mjlh.mcgill.ca/css/mjlh.css" media="all">
-            <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+            <script type="text/javascript" src="/ckeditor/ckeditor.js" charset="utf-8"></script>
       </head>
       <body>
       <center><h3>MJLH Website Administrative Backend</h3></center>
