@@ -28,7 +28,7 @@
 <html>
       <head>
             <title>MJLH Website Administrative Backend</title>
-            <link rel="stylesheet" type="text/css" href="http://mjlh.mcgill.ca/css/mjlh.css" media="all">
+            <link rel="stylesheet" type="text/css" href="css/mjlh.css" media="all">
             <script type="text/javascript" src="/ckeditor/ckeditor.js" charset="utf-8"></script>
       </head>
       <body>
@@ -74,7 +74,7 @@
                              {
                                echo "<option ";
                              }
-                             echo "value = 'http://mjlh.mcgill.ca/backend/backend.php?content_id=" . $line['content_id'] . "'>" .$line['content_id'] . "</option>\n";
+                             echo "value = 'http://".$_SERVER['HTTP_HOST']."/backend/backend.php?content_id=" . $line['content_id'] . "'>" .$line['content_id'] . "</option>\n";
                            }
                         ?>
                         </SELECT>
@@ -104,7 +104,7 @@
                              {
                                echo "<option ";
                              }
-                             echo "value = 'http://mjlh.mcgill.ca/backend/backend.php?blog_id=" . $line['blog_id'] . "'>" .$line['blog_id']. " (" .$line['author'] . ")</option>\n";
+                             echo "value = 'http://".$_SERVER['HTTP_HOST']."/backend/backend.php?blog_id=" . $line['blog_id'] . "'>" .$line['blog_id']. " (" .$line['author'] . ")</option>\n";
                            }
                         ?>
                         </SELECT>
