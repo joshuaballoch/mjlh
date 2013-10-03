@@ -28,7 +28,7 @@
 <html>
       <head>
             <title>MJLH Website Administrative Backend</title>
-            <link rel="stylesheet" type="text/css" href="css/mjlh.css" media="all">
+            <link rel="stylesheet" type="text/css" href="/css/mjlh.css" media="all">
             <script type="text/javascript" src="/ckeditor/ckeditor.js" charset="utf-8"></script>
       </head>
       <body>
