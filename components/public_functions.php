@@ -10,12 +10,6 @@
    return $pageURL;
   }
 
-  function convertEncoding($str, $from = 'auto', $to = "UTF-8") {
-    if($from == 'auto') $from = mb_detect_encoding($str);
-    return mb_convert_encoding ($str , $to, $from);
-  }
-
-
   // printTruncated was pulled from http://stackoverflow.com/questions/5128137/how-to-pass-a-variable-through-the-require-or-include-function-of-php
   function printTruncated($maxLength, $html, $pad="...", $isUtf8=true)
   {
