@@ -142,7 +142,6 @@ header ul.nav .btn-group button.btn {
   color: #cc0000;
   /* border-bottom:3px solid #cc0000; */
 }
-
 .card {
   background:#fff;
   margin:0 -10px 10px 0;
@@ -166,6 +165,11 @@ header ul.nav .btn-group button.btn {
   font-size:22px;
   line-height: 16px;
   vertical-align: middle;
+}
+
+.card.search-card {
+  padding:0;
+  height:54px;
 }
 footer {
   /* set height at bottom of mjlh.css with sticky footer decl */
