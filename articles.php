@@ -54,7 +54,7 @@
       <?php if ($article["TYPE"] == null) { ?>
 
         <?php // THEN IT IS AN EDITOR'S NOTE ?>
-        <h2> <?php talk("Editor's Note","Note de l'éditeur",$lang) ?> </h2>
+        <h2> <?php echo $article["TITLE"] ?> </h2>
         <?php echo $abtract ?>
         <?php if ($abtract == null) {
             talk("No content is available for display.", "Pas de content consultable pour cet article", $lang);
@@ -63,18 +63,25 @@
         <h5> <?php talk("Download", "Téléchargement", $lang) ?> </h5>
 
         <a href = '/pdfs/vol<?php echo $article['VOLUME_NUM'] ?>-<?php echo $article['ISSUE_NUM'] ?>/<?php echo $article['FILENAME'] ?>' target='_blank' onClick="parent.location='dltracker.php?item=<?php echo $article['ITEM_ID'] ?>">
-          <?php talk("Editor's Note (PDF)", "Note de l'éditeur (PDF)", $lang) ?>
+          <?php echo $article["TITLE"]." (PDF)" ?>
+          <i class="icon-download"></i>
         </a>
+
 
       <?php } else { ?>
         <?php // THEN IT IS AN ARTICLE ?>
         <h2> <?php echo $article["TITLE"] ?> </h2>
-        <h5> <?php talk("Abstract","Resumé", $lang) ?> </h5>
-
-          <?php echo $abtract ?>
-          <?php if ($abtract == null) {
+        <?php echo $abtract ?>
+        <?php if ($abtract == null) {
             talk("No abstract is available for display.", "Pas de resumé consultable pour cet article", $lang);
-          } ?>
+        } ?>
+
+        <h5> <?php talk("Download", "Téléchargement", $lang) ?> </h5>
+
+        <a href = '/pdfs/vol<?php echo $article['VOLUME_NUM'] ?>-<?php echo $article['ISSUE_NUM'] ?>/<?php echo $article['FILENAME'] ?>' target='_blank' onClick="parent.location='dltracker.php?item=<?php echo $article['ITEM_ID'] ?>">
+          <?php echo $article["TITLE"]." (PDF)" ?>
+          <i class="icon-download"></i>
+        </a>
 
       <?php } ?>
       <div class="card-share">
