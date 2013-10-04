@@ -25,11 +25,25 @@
         <?php
           if ($lang == "fr") {
             $date_key = "VOLUME_DATE_FR";
+            $abstract_key = "ABSTRACT_FR";
             $issue_text = "Numéro ";
           } else {
             $date_key = "VOLUME_DATE_EN";
+            $abstract_key = "ABSTRACT_EN";
             $issue_text = "Issue ";
           }
+          // FALLBACK FOR ABSTRACT LOADED IN ONLY ONE LANGUAGE
+
+          $abtract = $article[$abstract_key];
+
+          if (!$abtract) {
+            if ($lang = "fr") {
+              $abtract = $article["ABSTRACT_EN"];
+            } else {
+              $abtract = $article["ABSTRACT_FR"];
+            }
+          }
+
         ?>
         <a href="/volumes.php?v=<?php echo $article["VOLUME_NUM"]?>&i=<?php echo $article["ISSUE_NUM"]?>">
           <?php echo "Volume ". $volume["VOLUME_NUM"] . ", " . $issue_text . $volume["ISSUE_NUM"] . " (" . $volume[$date_key] . ")";?>
@@ -37,7 +51,32 @@
       </h1>
     </div>
     <div class="card">
-      <?php echo $article["VOLUME_NUM"] ?>
+      <?php if ($article["TYPE"] == null) { ?>
+
+        <?php // THEN IT IS AN EDITOR'S NOTE ?>
+        <h2> <?php talk("Editor's Note","Note de l'éditeur",$lang) ?> </h2>
+        <?php echo $abtract ?>
+        <?php if ($abtract == null) {
+            talk("No content is available for display.", "Pas de content consultable pour cet article", $lang);
+        } ?>
+
+        <h5> <?php talk("Download", "Téléchargement", $lang) ?> </h5>
+
+        <a href = '/pdfs/vol<?php echo $article['VOLUME_NUM'] ?>-<?php echo $article['ISSUE_NUM'] ?>/<?php echo $article['FILENAME'] ?>' target='_blank' onClick="parent.location='dltracker.php?item=<?php echo $article['ITEM_ID'] ?>">
+          <?php talk("Editor's Note (PDF)", "Note de l'éditeur (PDF)", $lang) ?>
+        </a>
+
+      <?php } else { ?>
+        <?php // THEN IT IS AN ARTICLE ?>
+        <h2> <?php echo $article["TITLE"] ?> </h2>
+        <h5> <?php talk("Abstract","Resumé", $lang) ?> </h5>
+
+          <?php echo $abtract ?>
+          <?php if ($abtract == null) {
+            talk("No abstract is available for display.", "Pas de resumé consultable pour cet article", $lang);
+          } ?>
+
+      <?php } ?>
       <div class="card-share">
         <?php require $_SERVER["DOCUMENT_ROOT"]."/components/shared/share.php" ?>
       </div>
