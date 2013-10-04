@@ -6,4 +6,8 @@
 
 ## Database Changes
 
--
+- ADD TWO COLUMNS to "VOLUME_ITEMS"
+    name: "ABSTRACT_EN" AND "ABSTRACT_FR"
+    type: "text"
+    default: "null"
+    Collation: "utf8_general_ci"
