@@ -86,7 +86,9 @@
 
         echo "</td></tr></table>\n";
       ?>
-
+      <div class="card-share">
+        <?php require $_SERVER["DOCUMENT_ROOT"]."/components/shared/share.php" ?>
+      </div>
     </div>
     <div class="card">
       <?php
