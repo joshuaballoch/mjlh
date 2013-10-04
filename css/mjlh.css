@@ -175,6 +175,8 @@ header ul.nav .btn-group button.btn {
   font-size: 41px;
   font-weight: 800;
   font-family:"Book Antiqua","Palatino-Linotype";
+}
+.header-card h1 a {
   color:#444;
 }
 .card {
