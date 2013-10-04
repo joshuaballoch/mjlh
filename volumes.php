@@ -37,7 +37,7 @@
   <div class="col-sm-8">
     <div class="header-card">
       <h1>
-        The Journal
+        <?php talk("The Journal", "Le Journal", $lang) ?>
       </h1>
     </div>
     <div class="card">
