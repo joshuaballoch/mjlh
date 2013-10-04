@@ -60,7 +60,14 @@
         <p>
           <?php talk ("Written By", "Écrit par",$lang) ?>
           <?php echo $article["AUTHOR"] ?> <br>
-          <?php echo "pp. ".$article["START_PAGE"]."-".$article["END_PAGE"] ?>
+          <?php
+            echo "(";
+            if ($article['START_PAGE'] == $article['END_PAGE']) {
+              echo "p." . $article['START_PAGE'] . ")";
+            } else {
+              echo "pp. " . $article['START_PAGE'] . "-" . $article['END_PAGE'] . ")";
+            }
+          ?>
         </p>
         <?php echo $abtract ?>
 
@@ -79,8 +86,9 @@
         <h5> <?php talk("Download", "Téléchargement", $lang) ?> </h5>
 
         <a href = '/pdfs/vol<?php echo $article['VOLUME_NUM'] ?>-<?php echo $article['ISSUE_NUM'] ?>/<?php echo $article['FILENAME'] ?>' target='_blank' onClick="parent.location='dltracker.php?item=<?php echo $article['ITEM_ID'] ?>">
-          <?php echo $article["TITLE"]." (PDF)" ?>
           <i class="icon-download"></i>
+          <?php echo $article["TITLE"]." (PDF)" ?>
+
         </a>
 
 
