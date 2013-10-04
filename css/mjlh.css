@@ -83,10 +83,14 @@ header {
   width:100%;
   height:125px;
   background:#fff;
-  background-image:url(/images/grey_grid.png);
+  background-image:url(/images/px_by_Gre3g.png);
   border-bottom:2px solid #cc0000; /* #dfdfdf */
   margin-bottom: 20px;
   padding-top:56px;
+  color:#fff;
+}
+header h1, header h2, header h3, header h4, header h5, header a, header a:hover, header a:visited {
+  color:#fff;
 }
 
 .mjlh-logo {
