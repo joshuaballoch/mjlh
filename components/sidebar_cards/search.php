@@ -1,4 +1,4 @@
-<div class="card search-card">
+<div class="card search-card reset-box-sizing">
   <script>
     (function() {
       var cx = '011409353577078830325:y0f0pfr3hie';

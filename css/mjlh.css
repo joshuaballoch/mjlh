@@ -192,7 +192,7 @@ header ul.nav .btn-group button.btn {
 
 .card.search-card {
   padding:0;
-  height:54px;
+  height:58px;
 }
 footer {
   /* set height at bottom of mjlh.css with sticky footer decl */
@@ -515,4 +515,11 @@ ul.pagination {
   height:30px;
   display:block;
   margin: 15px auto 20px auto;
+}
+
+.reset-box-sizing,
+.reset-box-sizing * {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
 }
