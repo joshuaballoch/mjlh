@@ -52,10 +52,8 @@
         $currentheading = $line['TYPE'];
         echo "<h4>" . $currentheading . "</h4>\n";
       }
-      echo "<p><strong><a href = \"articles.php?article_id=".$line["ITEM_ID"]."\">".$line['TITLE'] . "</a></strong><br>" . $line['AUTHOR'] . " (";
+      echo "<p><strong><a href = \"articles.php?article_id=".$line["ITEM_ID"]."\">".$line['TITLE'] . "</a></strong><br>" . $line['AUTHOR'];
 
-      if ($line['START_PAGE'] == $line['END_PAGE']) echo "p." . $line['START_PAGE'] . ")";
-      else echo "pp. " . $line['START_PAGE'] . "-" . $line['END_PAGE'] . ")";
       echo "</p>\n";
     }
 
