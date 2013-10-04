@@ -51,8 +51,7 @@
         $items_result = mysql_query($items_query, GetMyConnection()) or die('Error getting volume contents: ' . mysql_error());
 
         $currentheading = "";
-        while ($item = mysql_fetch_array($items_result))
-        {
+        while ($item = mysql_fetch_array($items_result)) {
           //Hack: 'Case Comments' is the only type which is not the same in both languages. Instead of adding another DB field, just do it here.
           if ($item['TYPE'] == "Case Comments" && $lang == "fr")
           {
@@ -64,15 +63,30 @@
             $currentheading = $item['TYPE'];
             echo "<h4>" . $currentheading . "</h4>\n";
           }
-          echo "<p><strong><a href = '/pdfs/vol" . $item['VOLUME_NUM'] . "-" . $item['ISSUE_NUM'] . "/" . $item['FILENAME'] ."' target='viewerwindow' onClick=\"parent.location='dltracker.php?item=" . $item['ITEM_ID'] ."'\">".$item['TITLE'] . "</a></strong><br>" . $item['AUTHOR'] . " (";
+          ?>
+          <p>
+            <strong><a href="articles.php?article_id=<?php echo $item["ITEM_ID"] ?>">
+              <?php echo $item["TITLE"] ?>
+            </a></strong><br>
+            <?php echo $item["AUTHOR"] ?>
 
-          if ($item['START_PAGE'] == $item['END_PAGE']) echo "p." . $item['START_PAGE'] . ")";
-          else echo "pp. " . $item['START_PAGE'] . "-" . $item['END_PAGE'] . ")";
-          echo "</p>\n";
-        }
+            <?php
+              echo "(";
+              if ($item['START_PAGE'] == $item['END_PAGE']) {
+                echo "p." . $item['START_PAGE'] . ")";
+              } else {
+                echo "pp. " . $item['START_PAGE'] . "-" . $item['END_PAGE'] . ")";
+              }
+            ?>
+            <br>
+            <a href = '/pdfs/vol<?php echo $article['VOLUME_NUM'] ?>-<?php echo $article['ISSUE_NUM'] ?>/<?php echo $article['FILENAME'] ?>' target='_blank' onClick="parent.location='dltracker.php?item=<?php echo $article['ITEM_ID'] ?>">
+              <i class="icon-download"></i>
+              <?php talk("Download (PDF)","Telechargez (PDF)",$lang) ?>
+            </a>
+          </p>
 
-        echo "</td></tr></table>\n";
-      ?>
+        <?php } // end while item = fetch array ?>
+
       <div class="card-share">
         <?php require $_SERVER["DOCUMENT_ROOT"]."/components/shared/share.php" ?>
       </div>
