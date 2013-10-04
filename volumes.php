@@ -8,7 +8,7 @@
     $displayissue = clean_input($_REQUEST['i']);
     $volume_query = "SELECT * FROM VOLUMES WHERE VOLUME_NUM = '".$displayvolume."' AND ISSUE_NUM = '".$displayissue."' limit 1";
   } else {
-    $volume_query = "SELECT * FROM VOLUMES order by volume_num, issue_num desc limit 1";
+    $volume_query = "SELECT * FROM VOLUMES order by volume_num DESC, issue_num DESC limit 1";
   }
 
   $volume_result = mysql_query($volume_query, GetMyConnection()) or die('Error getting volume ' . mysql_error());
