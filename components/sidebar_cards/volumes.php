@@ -16,7 +16,7 @@
 
 <div class="card">
   <h2>
-    <?php talk("Select Another Issue","S&eacute;lectionnez un autre num&eacute;ro",$lang); ?>
+    <?php talk("Select An Issue","S&eacute;lectionnez un autre num&eacute;ro",$lang); ?>
   </h2>
   <ul>
     <?php while ($line = mysql_fetch_array($result)) { ?>
