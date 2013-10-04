@@ -162,6 +162,11 @@ header ul.nav .btn-group button.btn {
   float:right;
 }
 
+.card-share a {
+  font-size:22px;
+  line-height: 16px;
+  vertical-align: middle;
+}
 footer {
   /* set height at bottom of mjlh.css with sticky footer decl */
   background-color: #666666;
