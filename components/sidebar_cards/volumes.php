@@ -1,39 +1,16 @@
 <?php
   // run queries to get all volumes
-  $query = "SELECT volume_num,issue_num,volume_date_".$lang.",filename FROM VOLUMES order by volume_num desc, issue_num desc";
+  $query = "SELECT * FROM VOLUMES order by volume_num desc, issue_num desc";
   $result = mysql_query($query, GetMyConnection()) or die('Error getting volume list: ' . mysql_error());
 
-  $runonce = true;
-
-  $displaytext = "";
-  $vol_filename = "";
-  $switchmenuitems = "";
-
   $issue_term = "Issue ";
-  if ($lang == "fr")
-  {
+  if ($lang == "fr") {
     $issue_term = "Numéro ";
+    $issue_date_key = "VOLUME_DATE_FR";
+  } else {
+    $issue_term = "Issue ";
+    $issue_date_key = "VOLUME_DATE_EN";
   }
-
-  while ($line = mysql_fetch_array($result))
-  {
-    if ($runonce && $displayvolume == 0)
-    {
-      $runonce = false;
-      $displayvolume = $line[0];
-      $displayissue = $line[1];
-      $displaytext = "Volume ". $line[0] . ", " . $issue_term . $line[1] . " (" . $line[2] . ")";
-      $vol_filename = "vol" . $line[0] . "-" . $line[1] ."/" . $line[3];
-    }
-    else if ($displayvolume == $line[0] && $displayissue == $line[1])
-    {
-      $displaytext = "Volume ". $line[0] . ", " . $issue_term . $line[1] . " (" . $line[2] . ")";
-      $vol_filename = "vol" . $line[0] . "-" . $line[1] ."/" . $line[3];
-    }
-
-    $switchmenuitems .= "<a class='sample_attach' href='volumes.php?v=" . $line[0]. "&i=" . $line[1] . "'>Volume " . $line[0] . ", " . $issue_term . $line[1] . " (" . $line[2] . ")</a>\n";
-  }
-
 
 ?>
 
@@ -41,5 +18,13 @@
   <h2>
     <?php talk("Select Another Issue","S&eacute;lectionnez un autre num&eacute;ro",$lang); ?>
   </h2>
-  <?php echo $switchmenuitems ?>
+  <ul>
+    <?php while ($line = mysql_fetch_array($result)) { ?>
+      <li>
+        <a href="volumes.php?v=<?php echo $line["VOLUME_NUM"] ?>&i=<?php echo $line["ISSUE_NUM"]?>">
+          <?php echo "Volume ".$line["VOLUME_NUM"].", ".$issue_term.$line["ISSUE_NUM"]." (".$line[$issue_date_key].")" ?>
+        </a>
+      </li>
+    <?php } ?>
+  </ul>
 </div>
