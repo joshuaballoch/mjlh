@@ -53,7 +53,7 @@
   </div>
 
   <div class="col-sm-4">
-    <?php require $_SERVER["DOCUMENT_ROOT"]."/components/volumes/sidebar.php"; ?>
+    <?php require $_SERVER["DOCUMENT_ROOT"]."/components/articles/sidebar.php"; ?>
   </div>
 </div>
 
