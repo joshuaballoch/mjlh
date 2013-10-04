@@ -1,3 +1,4 @@
+<?php require $_SERVER["DOCUMENT_ROOT"]."/components/sidebar_cards/search.php"; ?>
 <div class="card">
   IN THIS ISSUE
 </div>
