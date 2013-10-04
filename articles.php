@@ -46,7 +46,7 @@
       <?php
         //Add the comments
         // MUST define identifier first
-        $disqus_identifier = "volume/".$displayvolume."/issue/".$displayissue."/articles/"; // FIXME ADD ARTICLE INFO
+        $disqus_identifier = "volume/".$article["VOLUME_NUM"]."/issue/".$article["ISSUE_NUM"]."/articles/".$article["ITEM_ID"]; // FIXME ADD ARTICLE INFO
         require $_SERVER["DOCUMENT_ROOT"]."/components/shared/comments.php";
       ?>
     </div>
