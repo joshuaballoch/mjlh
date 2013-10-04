@@ -31,12 +31,13 @@
     }
     ?>
     <h2>
-      <a href="/volumes.php?v=<?php echo $result["VOLUME_NUM"]?>&i=<?php echo $result["ISSUE_NUM"]?>">
-        <?php if (!isset($volume_card_volume) && !isset($volume_card_issue)) { ?>
-          <?php talk("Current Issue ","Num&eacute;ro actuel ",$lang); ?>
-        <?php } else { ?>
-          <?php talk("In this issue", "Dans ce numéro", $lang) ?>
-        <?php } ?>
+      <?php if (!isset($volume_card_volume) && !isset($volume_card_issue)) { ?>
+        <a href="/volumes.php?">
+        <?php talk("Current Issue ","Num&eacute;ro actuel ",$lang); ?>
+      <?php } else { ?>
+        <a href="/volumes.php?v=<?php echo $result["VOLUME_NUM"]?>&i=<?php echo $result["ISSUE_NUM"]?>">
+        <?php talk("In this issue", "Dans ce numéro", $lang) ?>
+      <?php } ?>
       </a>
     </h2>
     <?php
