@@ -76,6 +76,9 @@
       <div id="wrap"> <!-- dummy for sticky footer soln, ends in footer.php -->
       <header>
         <div id="header-inner" class="container">
+          <div class="locale-link">
+            <?php echo getSwitchLanguageLink($lang); ?>
+          </div>
           <a href="/">
             <h1 class="hidden-xs"><div class="mjlh-logo"></div><?php talk("THE McGILL JOURNAL OF LAW & HEALTH","REVUE DE DROIT ET SANTÉ DE McGILL",$lang); ?></h1>
             <h1 class="visible-xs small"><div class="mjlh-logo"></div><?php talk("THE McGILL JOURNAL OF LAW & HEALTH","REVUE DE DROIT ET SANTÉ DE McGILL",$lang); ?></h1>

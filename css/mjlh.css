@@ -88,9 +88,28 @@ header {
   margin-bottom: 20px;
   padding-top:56px;
   color:#fff;
+  position:relative;
 }
-header h1, header h2, header h3, header h4, header h5, header a, header a:hover, header a:visited {
+header h1, header h2, header h3, header h4, header h5, header a, header a:visited {
   color:#fff;
+}
+header .locale-link {
+  position:absolute;
+  top:0;
+  right:20px;
+  background:#383838;
+  padding:5px;
+}
+header .locale-link.side {
+  top: auto;
+  bottom:1px;
+  right:0px;
+}
+header .locale-link a {
+  color:#fff;
+}
+header .locale-link a:hover {
+  color:#cc0000;
 }
 
 .mjlh-logo {

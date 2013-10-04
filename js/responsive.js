@@ -15,6 +15,9 @@ var checkWindowSize = function(){
     resizeHeaderH1Size(viewPortWidth, triggerWidth);
     resizeHeaderLogo(viewPortWidth,triggerWidth);
     resizeHeaderHeight(viewPortWidth,triggerWidth);
+    move_locale_link_to_side();
+  } else {
+    move_locale_link_to_top();
   }
 };
 
@@ -55,3 +58,12 @@ var resizeHeaderHeight = function(viewPortWidth,triggerWidth) {
   $header.css("height",newHeight);
   $header.css("padding-top",newPadding)
 }
+
+var move_locale_link_to_top = function () {
+  $('.locale-link').removeClass('side');
+};
+
+var move_locale_link_to_side = function () {
+  $('.locale-link').addClass('side');
+};
+

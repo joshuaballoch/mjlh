@@ -106,7 +106,7 @@
   function getSwitchLanguageLink($currentLanguage) {
      //Put the current page URL in $pageURL
      $pageURL = 'http';
-     if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
+     if ( array_key_exists("HTTPS",$_SERVER) && $_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
      $pageURL .= "://";
      if ($_SERVER["SERVER_PORT"] != "80") {
       $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
@@ -117,12 +117,12 @@
      if ($currentLanguage == "en")
      {
        $newLanguage = "fr";
-       $linkText = "Fran&ccedil;ais</a>";
+       $linkText = "français</a>";
      }
      else
      {
        $newLanguage = "en";
-       $linkText = "English</a>&nbsp;";
+       $linkText = "english</a>";
      }
 
      if (strrpos($pageURL, "?"))
