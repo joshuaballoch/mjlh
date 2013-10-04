@@ -3,6 +3,9 @@
   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
   var disqus_shortname = 'mjlh'; // required: replace example with your forum shortname
   var disqus_identifier = '<?php echo $_SERVER["HTTP_HOST"]."/".$disqus_identifier ?>';
+  var disqus_config = function () {
+    this.language = "<?php echo $lang ?>";
+  };
 
   /* * * DON'T EDIT BELOW THIS LINE * * */
   (function() {
