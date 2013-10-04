@@ -37,7 +37,7 @@
           $abtract = $article[$abstract_key];
 
           if (!$abtract) {
-            if ($lang = "fr") {
+            if ($lang == "fr") {
               $abtract = $article["ABSTRACT_EN"];
             } else {
               $abtract = $article["ABSTRACT_FR"];
@@ -52,11 +52,7 @@
     </div>
     <div class="card">
 
-        <?php // THEN IT IS AN EDITOR'S NOTE ?>
         <h2> <?php echo $article["TITLE"] ?> </h2>
-
-
-
         <p>
           <?php talk ("Written By", "Écrit par",$lang) ?>
           <?php echo $article["AUTHOR"] ?> <br>
