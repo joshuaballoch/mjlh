@@ -36,7 +36,7 @@ img
 
 h1, h2, h3, h4, legend
 {
-  text-transform: uppercase;
+  /*text-transform: uppercase; */
   padding: 0px;
   margin-top:5px;
   margin-bottom: 5px;
@@ -165,6 +165,18 @@ header ul.nav .btn-group button.btn {
   color: #cc0000;
   /* border-bottom:3px solid #cc0000; */
 }
+.header-card {
+  margin-top: -10px;
+  margin-bottom: -2px;
+  z-index: 0;
+  position: relative;
+}
+.header-card h1 {
+  font-size: 41px;
+  font-weight: 800;
+  font-family:"Book Antiqua","Palatino-Linotype";
+  color:#444;
+}
 .card {
   background:#fff;
   margin:0 -10px 10px 0;
@@ -172,6 +184,8 @@ header ul.nav .btn-group button.btn {
   padding:15px;
   border:1px solid #dfdfdf;
   overflow:hidden;
+  z-index:1;
+  position:relative;
 }
 
 .card a.read_more {

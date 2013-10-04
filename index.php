@@ -4,9 +4,11 @@
 ?>
 <div class="row">
   <div class="col-sm-8">
-    <div class="card">
+    <div class="header-card">
       <h1>
-      <?php talk("MJLH Online","RDSM en ligne",$lang); ?>
+        <a href="">
+          <?php talk("MJLH Online","RDSM en ligne",$lang); ?>
+        </a>
       </h1>
     </div>
       <?php

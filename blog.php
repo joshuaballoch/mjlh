@@ -4,7 +4,7 @@
 
 <div class="row">
   <div class="col-sm-8">
-    <div class="card">
+    <div class="header-card">
       <h1>
         <a href="/">
           <?php talk("MJLH Online","RDSM en ligne",$lang); ?>

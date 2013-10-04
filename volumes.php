@@ -35,12 +35,15 @@
 
 <div class="row">
   <div class="col-sm-8">
+    <div class="header-card">
+      <h1>
+        The Journal
+      </h1>
+    </div>
     <div class="card">
       <h1>
         <?php echo "Volume ". $volume["VOLUME_NUM"] . ", " . $issue_text . $volume["ISSUE_NUM"] . " (" . $volume[$date_key] . ")";?>
       </h1>
-    </div>
-    <div class="card">
       <?php // RENDER THE DOWNLOAD LINK ?>
       <a href="/pdfs/<?php echo $volume["FILENAME"] ?>" target="_blank" onClick="parent.location='dltracker.php?v=<?php echo $displayvolume ?>&i= <?php echo $displayissue ?>'">
         <?php talk("Download Full Issue (PDF)", "T&eacute;l&eacute;charger le num&eacute;ro complet (PDF)", $lang); ?>
