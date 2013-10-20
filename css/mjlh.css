@@ -117,12 +117,6 @@ header .locale-link a:hover {
   background-image:url('/images/mjlh.png');
   background-repeat: no-repeat;
   background-size:contain;
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-src='/images/mjlh.png',
-sizingMethod='scale');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(
-src='/images/mjlh.png',
-sizingMethod='scale')";
   height:31px;
   width: 31px;
   display:inline-block;
