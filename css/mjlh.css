@@ -4,9 +4,8 @@ body
 {
    background-color: #eee;
    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, Sans-serif;
-   font-size: 11px;
+   font-size: 12px;
    margin: 0px;
-   font-weight:200;
 }
 
 .inline {
@@ -187,6 +186,17 @@ header ul.nav .btn-group button.btn {
   overflow:hidden;
   z-index:1;
   position:relative;
+}
+
+.card h2 {
+  font-size:19px;
+  line-height:25px;
+  margin-top:-2px;
+  color:#444;
+}
+
+.card h2 a {
+  color:#444;
 }
 
 .card a.read_more {
