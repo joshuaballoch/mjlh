@@ -13,7 +13,7 @@
     </div>
       <?php
         // RENDER BLOG POSTS
-        $per_page = 10;
+        $per_page = 5;
 
         $query = "SELECT BLOG_ID, TITLE, AUTHOR, DATE_FORMAT(BLOG_DATE,'%b. %e, %Y') as date,ENTRY FROM BLOGS order by BLOG_DATE desc limit " . $per_page;
         // Adjust query to deal with pagination!

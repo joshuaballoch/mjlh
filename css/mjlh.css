@@ -87,7 +87,7 @@ header {
   background-image:url(/images/px_by_Gre3g.png);
   border-bottom:2px solid #cc0000; /* #dfdfdf */
   margin-bottom: 20px;
-  padding-top:56px;
+  padding-top:50px;
   color:#fff;
   position:relative;
 }
@@ -128,7 +128,7 @@ header .locale-link a:hover {
 header h1 {
   margin-bottom:0px;
   text-transform: none;
-  font-size:30px;
+  font-size:34px;
 }
 
 header h1.small {
@@ -174,7 +174,7 @@ header ul.nav .btn-group button.btn {
   position: relative;
 }
 .header-card h1, .header-card h1 a {
-  font-size: 41px;
+  font-size: 36px;
   font-weight: 400;
   /*font-family:"Book Antiqua","Palatino-Linotype";*/
   color:#CA3434;
