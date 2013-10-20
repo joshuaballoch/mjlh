@@ -103,7 +103,7 @@ header .locale-link {
 }
 header .locale-link.side {
   top: auto;
-  bottom:1px;
+  bottom:34px;
   right:0px;
 }
 header .locale-link a {
