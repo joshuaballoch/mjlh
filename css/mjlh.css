@@ -190,6 +190,11 @@ header ul.nav .btn-group button.btn {
   position:relative;
 }
 
+.card img {
+  max-width:100%;
+  height:auto;
+}
+
 .card h2 {
   font-size:19px;
   line-height:25px;
