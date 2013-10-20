@@ -1,145 +1,127 @@
 <?php
+  require_once "header.php";
+?>
+<?php
+  // MAKE THE REQUEST FOR THE VOLUME
+  if (array_key_exists('v', $_REQUEST) && array_key_exists('i', $_REQUEST)) {
+    $displayvolume = clean_input($_REQUEST['v']);
+    $displayissue = clean_input($_REQUEST['i']);
+    $volume_query = "SELECT * FROM VOLUMES WHERE VOLUME_NUM = '".$displayvolume."' AND ISSUE_NUM = '".$displayissue."' limit 1";
+  } else {
+    $volume_query = "SELECT * FROM VOLUMES order by volume_num DESC, issue_num DESC limit 1";
+  }
 
-      $headtext = '<script type="text/javascript" src="dropdown.js"></script>';
-      $headtext .= "\n<script>\nfunction PopupCenter(pageURL, title,w,h) {\nvar left = (screen.width/2)-(w/2);\nvar top = (screen.height/2)-(h/2);\nvar targetWin = window.open (pageURL, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);\n}\n</script>\n";
-      require_once "header.php";
+  $volume_result = mysql_query($volume_query, GetMyConnection()) or die('Error getting volume ' . mysql_error());
+  $volume = mysql_fetch_array($volume_result);
 
-//      echo "<table<tr><td valign = 'top'>\n";
-echo "<div id = 'volumedetails'>\n";
+  // SET DISPLAYVOLUME and DISPLAYISSUE unless set
+  if (!isset($displayvolume)) {
+    $displayvolume = $volume["VOLUME_NUM"];
+  }
+  if (!isset($displayissue)) {
+    $displayissue = $volume["ISSUE_NUM"];
+  }
 
-      $query = "SELECT volume_num,issue_num,volume_date_".$lang.",filename FROM VOLUMES order by volume_num desc, issue_num desc";
-      $result = mysql_query($query, GetMyConnection()) or die('Error getting volume list: ' . mysql_error());
-      
-      $runonce = true;
+  // LANGUAGE SPECIFIC VARIABLE
+  if ($lang == "fr") {
+    $date_key = "VOLUME_DATE_FR";
+    $issue_text = "Numéro ";
+  } else {
+    $date_key = "VOLUME_DATE_EN";
+    $issue_text = "Issue ";
+  }
 
-      $displayvolume = 0;
-      $displayissue = 0;
-      if (array_key_exists('v', $_REQUEST) && array_key_exists('i', $_REQUEST))
-      {
-          $displayvolume = clean_input($_REQUEST['v']);
-          $displayissue = clean_input($_REQUEST['i']);
-      }
+?>
 
-      $displaytext = "";
-      $vol_filename = "";
-      $switchmenuitems = "";
+<div class="row">
+  <div class="col-sm-8">
+    <div class="header-card">
+      <h1>
+        <?php talk("The Journal", "Le Journal", $lang) ?>
+      </h1>
+    </div>
+    <div class="card full-page-card volumes">
+      <h2>
+        <?php echo "Volume ". $volume["VOLUME_NUM"] . ", " . $issue_text . $volume["ISSUE_NUM"] . " (" . $volume[$date_key] . ")";?>
+      </h2>
+      <div class="author_stamp pull-right">
+        <?php // RENDER THE DOWNLOAD LINK ?>
+        <a href="/pdfs/vol<?php echo $volume["VOLUME_NUM"] ?>-<?php echo $volume["ISSUE_NUM"] ?>/<?php echo $volume["FILENAME"] ?>" target="_blank" onClick="parent.location='dltracker.php?v=<?php echo $displayvolume ?>&i= <?php echo $displayissue ?>'">
+          <i class="icon-download"></i><?php talk("Download Full Issue (PDF)", "T&eacute;l&eacute;charger le num&eacute;ro complet (PDF)", $lang); ?>
+        </a>
+      </div>
 
-      $issue_term = "Issue ";
-      if ($lang == "fr")
-      {
-        $issue_term = "Num&eacute;ro ";
-      }
+      <div class="content">
 
-      while ($line = mysql_fetch_array($result))
-      {
-        if ($runonce && $displayvolume == 0)
-        {
-          $runonce = false;
-          $displayvolume = $line[0];
-          $displayissue = $line[1];
-          $displaytext = "Volume ". $line[0] . ", " . $issue_term . $line[1] . " (" . $line[2] . ")";
-          $vol_filename = "vol" . $line[0] . "-" . $line[1] ."/" . $line[3];
-        }
-        else if ($displayvolume == $line[0] && $displayissue == $line[1])
-        {
-          $displaytext = "Volume ". $line[0] . ", " . $issue_term . $line[1] . " (" . $line[2] . ")";
-          $vol_filename = "vol" . $line[0] . "-" . $line[1] ."/" . $line[3];
-        }
+        <?php // RENDER THE ISSUE CONTENTS
+          $items_query = "SELECT * FROM VOLUME_ITEMS where volume_num = '".$displayvolume."' and issue_num = '" . $displayissue . "' order by start_page";
+          $items_result = mysql_query($items_query, GetMyConnection()) or die('Error getting volume contents: ' . mysql_error());
 
-        $switchmenuitems .= "<a class='sample_attach' href='volumes.php?v=" . $line[0]. "&i=" . $line[1] . "'>Volume " . $line[0] . ", " . $issue_term . $line[1] . " (" . $line[2] . ")</a>\n";
-      }
+          $currentheading = "";
+          while ($item = mysql_fetch_array($items_result)) {
+            //Hack: 'Case Comments' is the only type which is not the same in both languages. Instead of adding another DB field, just do it here.
+            if ($item['TYPE'] == "Case Comments" && $lang == "fr")
+            {
+              $item['TYPE'] = "Commentaires d'arrêt";
+            }
 
+            if ($item['TYPE'] != $currentheading)
+            {
+              $currentheading = $item['TYPE'];
+              echo "<h4>" . $currentheading . "</h4>\n";
+            }
+            ?>
+            <p>
+              <strong><a href="articles.php?article_id=<?php echo $item["ITEM_ID"] ?>">
+                <?php echo $item["TITLE"] ?>
+              </a></strong>
+              <div class="about-article">
 
-      echo "<table width = '100%'><tr><td><nobr><h2>" . $displaytext . "</h2></nobr><strong><a href = '/pdfs/" . $vol_filename ."' target='viewerwindow' onClick=\"parent.location='dltracker.php?v=" . $displayvolume ."&i=". $displayissue ."'\">";
-      talk("Download Full Issue (PDF)", "T&eacute;l&eacute;charger le num&eacute;ro complet (PDF)", $lang);
-      echo "</a></strong> <img src = 'images/document-pdf.png' align = 'middle'></td>";
-      echo "<td valign = 'top'><nobr>\n";
-      echo '<div id="sample_attach_menu_parent" class="sample_attach">';
-      talk("Select Another Issue","S&eacute;lectionnez un autre num&eacute;ro",$lang);
-      echo ' <img src = "images/arrow-curve-270.png" align = "middle"></div>';
-      echo '<div id="sample_attach_menu_child">';
-      echo $switchmenuitems;
-      echo "</div></nobr></td>";
-      
+                <?php echo $item["AUTHOR"] ?>
 
-      echo "<td rowspan = '2' valign = 'top'><div id = 'commentsdiv'>\n";
+                <?php
+                  echo "(";
+                  if ($item['START_PAGE'] == $item['END_PAGE']) {
+                    echo "p." . $item['START_PAGE'] . ")";
+                  } else {
+                    echo "pp. " . $item['START_PAGE'] . "-" . $item['END_PAGE'] . ")";
+                  }
+                ?>
+              </div>
+              <a class="download-link" href = '/pdfs/vol<?php echo $item['VOLUME_NUM'] ?>-<?php echo $item['ISSUE_NUM'] ?>/<?php echo $item['FILENAME'] ?>' target='_blank' onClick="parent.location='dltracker.php?item=<?php echo $item['ITEM_ID'] ?>">
+                <i class="icon-download"></i>
+                <?php talk("Download (PDF)","Telechargez (PDF)",$lang) ?>
+              </a>
+            </p>
 
-      //Comment div content
-      echo "<span style = \"float:right;padding-top: 5px;padding-right: 10px;\"><strong><a href = '#' onclick=\"PopupCenter('http://mjlh.mcgill.ca/comment.php?src=v" . $displayvolume ."-". $displayissue. "&l=" . $lang . "', 'myPop1',400,400);\">";
-      talk("Leave a Comment","Laissez un commentaire",$lang);
-      echo "</a></strong></span>\n";
-      echo "<h4>";
-      talk("Your Thoughts:","Vos pens&eacute;es:", $lang);
-      echo "</h4>";
+          <?php } // end while item = fetch array ?>
 
-      $query = "select POSTED_BY, COMMENT, DATE_FORMAT(COMMENT_DATE, '<i>(%b. %e, %Y at %l:%i %p ET)</i>') as DATE from COMMENTS where source = 'v" . $displayvolume . "-" . $displayissue . "' order by COMMENT_DATE desc";
-      $result = mysql_query($query, GetMyConnection()) or die('Error getting volume comments: ' . mysql_error());
-      if (mysql_num_rows($result))
-      {
-          while ($line = mysql_fetch_array($result))
-          {
-            echo "<strong>" . htmlentities($line['POSTED_BY']) . "</strong> " . $line['DATE'] . ":<p>" . htmlentities($line['COMMENT']) ."</p>";
-             //apply htmlentities or htmlspecialchars to contents of db
-          }
-      }
-      else
-      {
-        echo "<p><i>";
-        talk("No one has commented on this Issue.","Personne n'a encore comment&eacute;e.",$lang);
-        echo "</i></p>\n";
-      }
-
-      echo "</div></td></tr>\n";
+      </div>
 
 
-      echo "<tr><td colspan = '2' id = 'volumecontentscell' valign = 'top'>\n";
 
+      <div class="card-share">
+        <?php require $_SERVER["DOCUMENT_ROOT"]."/components/shared/share.php" ?>
+      </div>
+    </div>
+    <?php // DISABLE VOLUME LEVEL COMMENTS
+      //<div class="card">
+      //  <?php
+      //    //Add the comments
+      //    // MUST define identifier first
+      //    $disqus_identifier = "volume/".$displayvolume."/issue/".$displayissue;
+      //    require $_SERVER["DOCUMENT_ROOT"]."/components/shared/comments.php";
+      //
+      //</div>
+    ?>
 
-      $query = "SELECT * FROM VOLUME_ITEMS where volume_num = '".$displayvolume."' and issue_num = '" . $displayissue . "' order by start_page";
-      $result = mysql_query($query, GetMyConnection()) or die('Error getting volume contents: ' . mysql_error());
+  </div>
 
-      $currentheading = "";
-      while ($line = mysql_fetch_array($result))
-      {
-        //Hack: 'Case Comments' is the only type which is not the same in both languages. Instead of adding another DB field, just do it here.
-        if ($line['TYPE'] == "Case Comments" && $lang == "fr")
-        {
-          $line['TYPE'] = "Commentaires d'arr�t";
-        }
+  <div class="col-sm-4">
+    <?php require $_SERVER["DOCUMENT_ROOT"]."/components/volumes/sidebar.php"; ?>
+  </div>
+</div>
 
-        if ($line['TYPE'] != $currentheading)
-        {
-          $currentheading = $line['TYPE'];
-          echo "<h4>" . $currentheading . "</h4>\n";
-        }
-        echo "<p><strong><a href = '/pdfs/vol" . $line['VOLUME_NUM'] . "-" . $line['ISSUE_NUM'] . "/" . $line['FILENAME'] ."' target='viewerwindow' onClick=\"parent.location='dltracker.php?item=" . $line['ITEM_ID'] ."'\">".$line['TITLE'] . "</a></strong><br>" . $line['AUTHOR'] . " (";
-
-        if ($line['START_PAGE'] == $line['END_PAGE']) echo "p." . $line['START_PAGE'] . ")";
-        else echo "pp. " . $line['START_PAGE'] . "-" . $line['END_PAGE'] . ")";
-        echo "</p>\n";
-      }
-      
-      echo "</td></tr></table>\n";
-      
-      ?>
-
-      <script type="text/javascript">
-      at_attach("sample_attach_menu_parent", "sample_attach_menu_child", "click", "y", "pointer");
-      </script>
-      <?php
-
-      echo "</div>\n";
-
-      //echo "</div></td></tr></table>\n";
-
-      /*
-      if (array_key_exists('id', $_GET))
-      {
-         $query = "select ".$lang." from CONTENT where content_id =".clean_input($_GET['id']);
-         $result = mysql_query($query, GetMyConnection()) or die('Error getting contents: ' . mysql_error());
-         $line = mysql_fetch_array($result);
-         echo $line[0];
-      }   */
-
-      require_once "footer.php";
+<?php
+  require_once "footer.php";
 ?>

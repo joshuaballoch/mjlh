@@ -1,10 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
    "http://www.w3.org/TR/html4/strict.dtd">
-   
+
 <?php
      require_once $_SERVER["DOCUMENT_ROOT"]."/secure/dbconnect.php";
      //Input handling routines
-     require_once $_SERVER["DOCUMENT_ROOT"]."/func.php";
+     require_once $_SERVER["DOCUMENT_ROOT"]."/components/public_functions.php";
 
     //Check for valid session token in the cookie.
     $verified = "0";
@@ -12,7 +12,7 @@
     {
       //Else, retrieve language from cookie if it exists
       $checktoken = $_COOKIE['tkn'];
-      
+
       //This is where the session timeout is set. Currently at 3600 seconds i.e. 60 mins.
       $verifyquery = "select count(*) from USERS where session_token = " . clean_input($checktoken) . " and (unix_timestamp(now()) - unix_timestamp(session_last_action)) < 3600";
       $verifyresult = mysql_query($verifyquery, GetMyConnection()) or die('Verify query failed: ' . mysql_error());
@@ -28,12 +28,12 @@
 <html>
       <head>
             <title>MJLH Website Administrative Backend</title>
-            <link rel="stylesheet" type="text/css" href="http://mjlh.mcgill.ca/css/mjlh.css" media="all">
-            <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+            <link rel="stylesheet" type="text/css" href="/css/mjlh.css" media="all">
+            <script type="text/javascript" src="/ckeditor/ckeditor.js" charset="utf-8"></script>
       </head>
       <body>
       <center><h3>MJLH Website Administrative Backend</h3></center>
-      
+
       <?php
            if ($verified == "1")
            {//verified
@@ -74,12 +74,12 @@
                              {
                                echo "<option ";
                              }
-                             echo "value = 'http://mjlh.mcgill.ca/backend/backend.php?content_id=" . $line['content_id'] . "'>" .$line['content_id'] . "</option>\n";
+                             echo "value = 'http://".$_SERVER['HTTP_HOST']."/backend/backend.php?content_id=" . $line['content_id'] . "'>" .$line['content_id'] . "</option>\n";
                            }
                         ?>
                         </SELECT>
                         </li>
-                        
+
                         <li>Create New Page:<form name="newpageform" method="post" action="backend.php">
                              <input type = "text" name = "content_id" length = "10">
                              <input type = "hidden" name = "_new_content_submit_check" value = "1">
@@ -104,12 +104,12 @@
                              {
                                echo "<option ";
                              }
-                             echo "value = 'http://mjlh.mcgill.ca/backend/backend.php?blog_id=" . $line['blog_id'] . "'>" .$line['blog_id']. " (" .$line['author'] . ")</option>\n";
+                             echo "value = 'http://".$_SERVER['HTTP_HOST']."/backend/backend.php?blog_id=" . $line['blog_id'] . "'>" .$line['blog_id']. " (" .$line['author'] . ")</option>\n";
                            }
                         ?>
                         </SELECT>
                         </li>
-                        
+
                         <li>Create New Blog:<form name="newblogform" method="post" action="backend.php">
                              <input type = "hidden" name = "_new_blog_submit_check" value = "1">
                              <input type = "submit" value = "Go">
@@ -195,7 +195,7 @@
                  <?php
 
              }//edit blog
-             
+
              if (array_key_exists('action', $_GET))
              {
                if ($_GET['action'] == "announcements")
@@ -235,7 +235,7 @@
                    echo "<a href = \"backend.php?action=announcements&del_id=" . $line['ANN_ID'] . "\">Delete</a></li>\n";
                  }
                }//Edit announcements
-               
+
                if ($_GET['action'] == "colloqreg")
                {
                  if (array_key_exists('notified', $_GET))
@@ -268,21 +268,21 @@
                  $result = mysql_query($query, GetMyConnection()) or die('Error getting registrants: ' . mysql_error());
                   while ($line = mysql_fetch_assoc($result))
                   {
-                      echo "\t<tr>\n"; 
-                
-                      foreach ($line as $col_value) 
+                      echo "\t<tr>\n";
+
+                      foreach ($line as $col_value)
                       {
                           echo "\t\t<td>$col_value</td>\n";
                       }
                       echo "\t</tr>\n";
                   }
-                  
+
                   echo "</table>\n";
                }
 
              }
 
-             
+
 
              echo "</td></tr></table>";
 
