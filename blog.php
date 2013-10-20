@@ -4,14 +4,14 @@
 
 <div class="row">
   <div class="col-sm-8">
-    <div class="card">
+    <div class="header-card">
       <h1>
         <a href="/">
           <?php talk("MJLH Online","RDSM en ligne",$lang); ?>
         </a>
       </h1>
     </div>
-    <div class="card">
+    <div class="card full-page-card">
       <?php
         // Base Query
         $query = "SELECT BLOG_ID, TITLE, AUTHOR, DATE_FORMAT(BLOG_DATE,'%b. %e, %Y') as date,ENTRY FROM BLOGS ";
@@ -32,10 +32,15 @@
       ?>
       <h2><?php echo $line['TITLE'] ?></h2>
 
-      <?php talk ("Posted By", "Posté par",$lang) ?>
-      <?php echo $line['AUTHOR'] ?>
-      <?php echo $line['date'] ?>
-      <?php echo $line['ENTRY'] ?>
+      <div class="author_stamp">
+        <?php talk ("Posted By", "Posté par",$lang) ?>
+        <?php echo $line['AUTHOR'] ?>
+        <?php echo $line['date'] ?>
+      </div>
+
+      <div class="content">
+        <?php echo $line['ENTRY'] ?>
+      </div>
       <div class="card-share">
         <?php require $_SERVER["DOCUMENT_ROOT"]."/components/shared/share.php" ?>
       </div>

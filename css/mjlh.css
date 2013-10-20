@@ -3,8 +3,8 @@
 body
 {
    background-color: #eee;
-   font-family: Helvetica, Arial, Sans-serif;
-   font-size: 11px;
+   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, Sans-serif;
+   font-size: 12px;
    margin: 0px;
    font-weight:200;
 }
@@ -36,11 +36,12 @@ img
 
 h1, h2, h3, h4, legend
 {
-  text-transform: uppercase;
+  /*text-transform: uppercase; */
   padding: 0px;
   margin-top:5px;
   margin-bottom: 5px;
   color: #191970;    /*midnight blue*/
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial;
 }
 
 h1
@@ -74,7 +75,7 @@ p
 
 input, textarea, select
 {
-   font-family: Verdana, sans-serif;
+   /*font-family: Verdana, sans-serif;*/
    font-size: 11px;
 }
 
@@ -83,14 +84,14 @@ header {
   width:100%;
   height:125px;
   background:#fff;
-  background-image:url(/images/px_by_Gre3g.png);
+  background-image:url('/images/px_by_Gre3g.png');
   border-bottom:2px solid #cc0000; /* #dfdfdf */
   margin-bottom: 20px;
-  padding-top:56px;
+  padding-top:50px;
   color:#fff;
   position:relative;
 }
-header h1, header h2, header h3, header h4, header h5, header a, header a:visited {
+header h1, header h2, header h3, header h4, header h5, header a, header a:visited, header a:link {
   color:#fff;
 }
 header .locale-link {
@@ -102,7 +103,7 @@ header .locale-link {
 }
 header .locale-link.side {
   top: auto;
-  bottom:1px;
+  bottom:34px;
   right:0px;
 }
 header .locale-link a {
@@ -113,9 +114,11 @@ header .locale-link a:hover {
 }
 
 .mjlh-logo {
-  background-image:url(/images/mjlh.png);
+  background-image:url('/images/mjlh.png');
   background-repeat: no-repeat;
   background-size:contain;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/mjlh.png', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/mjlh.png', sizingMethod='scale')";
   height:31px;
   width: 31px;
   display:inline-block;
@@ -127,7 +130,7 @@ header .locale-link a:hover {
 header h1 {
   margin-bottom:0px;
   text-transform: none;
-  font-size:30px;
+  font-size:34px;
 }
 
 header h1.small {
@@ -165,15 +168,76 @@ header ul.nav .btn-group button.btn {
   color: #cc0000;
   /* border-bottom:3px solid #cc0000; */
 }
+.header-card {
+  margin-top: -10px;
+  margin-bottom: -2px;
+  padding-left:16px;
+  z-index: 0;
+  position: relative;
+}
+.header-card h1, .header-card h1 a {
+  font-size: 36px;
+  font-weight: 400;
+  /*font-family:"Book Antiqua","Palatino-Linotype";*/
+  color:#CA3434;
+}
 .card {
   background:#fff;
   margin:0 -10px 10px 0;
   width:100%;
-  padding:15px;
+  padding:20px 20px 15px 20px;
   border:1px solid #dfdfdf;
   overflow:hidden;
+  z-index:1;
+  position:relative;
 }
 
+.card img {
+  max-width:100%;
+  height:auto;
+}
+
+.card h2 {
+  font-size:19px;
+  line-height:25px;
+  margin-top:2px;
+  padding-left:5px;
+  margin-left:-5px;
+  margin-right:-5px;
+  color:#444;
+  width:100%;
+  border-bottom:1px dotted #e5e5e5;
+  padding-bottom:3px;
+}
+
+.card strong, .card b {
+  font-weight:400;
+}
+
+.card h2 a {
+  color:#444;
+}
+
+.card h2 .small {
+  display:inline;
+  font-weight:200;
+  font-size:90%;
+}
+
+.card .author_stamp {
+  color:#888;
+}
+.card h4 {
+  font-size:14px;
+  text-transform: uppercase;
+}
+.card .content h4 {
+  font-size:18px;
+}
+
+.card .content {
+  font-size:14px;
+}
 .card a.read_more {
   float:right;
   font-style: italic;
@@ -200,8 +264,37 @@ header ul.nav .btn-group button.btn {
   padding:0;
   height:58px;
 }
+
+.card.full-page-card h2 {
+  font-size: 23px;
+  line-height: 33px;
+  padding-bottom: 7px;
+  margin-top: -3px;
+}
+
+.card.full-page-card .content {
+  line-height: 24px;
+  font-size: 16px;
+}
+
+.card.full-page-card p {
+  margin-top:18px;
+}
+
+.card.volumes .content {
+  margin-top:20px;
+}
+
+.card.volumes .about-article {
+  margin-left:10px;
+  margin-top:-15px;
+}
+.card.volumes .download-link {
+  font-size:12px;
+  margin-left:10px;
+}
+
 footer {
-  /* set height at bottom of mjlh.css with sticky footer decl */
   background-color: #666666;
   border-top:1px solid #fff;
   -moz-box-shadow: 10px 10px 5px #888;
@@ -209,6 +302,8 @@ footer {
   box-shadow: 10px 10px 5px #888;
   overflow:hidden;
   color:#f5f5f5;
+  position:relative;
+  margin-top:10px;
 }
 
 .footer-follow-me {
@@ -231,7 +326,7 @@ footer ul {
 footer .footer-shadow {
   width:200%;
   margin-top:-119px;
-  height:130px;
+  height:100%;
   box-shadow: inset 0px 4px 50px #333;
 }
 
@@ -264,7 +359,7 @@ footer .footer-shadow {
   left: 295px;
   font-size: 32pt;
   line-height: 115%;
-  font-family: Palatino Linotype, Serif;
+  /*font-family: Palatino Linotype, Serif;*/
   letter-spacing:-0.3px
 }
 
@@ -372,7 +467,7 @@ footer .footer-shadow {
 {
    text-transform: none;
    letter-spacing: 1px;
-   font-family: Palatino Linotype, Serif;
+   /*font-family: Palatino Linotype, Serif;*/
    font-size: 22px;
 }
 #homeblogentry, #blogentrydiv
@@ -477,37 +572,28 @@ div.sample_attach
 
 /*
 Sticky Footer Solution
-by Steve Hatcher
-http://stever.ca
-http://www.cssstickyfooter.com
 */
-
-* {margin:0;padding:0;}
-
-/* must declare 0 margins on everything, also for main layout components use padding, not
-vertical margins (top and bottom) to add spacing, else those margins get added to total height
-and your footer gets pushed down a bit more, creating vertical scroll bars in the browser */
 
 html, body {height: 100%;}
 
-#wrap {min-height: 100%;}
+.frame {
+  display:table;
+  height: 100%;
+  width:100%;
+}
 
-#container {overflow:auto;
-  padding-bottom: 120px;}  /* must be same height as the footer */
+.frame-row {
+  display:table-row;
+  height:1px;
+}
 
-footer {
-  position: relative;
-  margin-top: -120px; /* negative value of footer height */
-  height: 120px;
-  clear:both;}
+.frame-row.expand {
+  height:auto;
+}
 
-/*Opera Fix*/
-body:before {/* thanks to Maleika (Kohoutec)*/
-content:"";
-height:100%;
-float:left;
-width:0;
-margin-top:-32767px;/* thank you Erik J - negate effect of float*/
+.footer-sub-wrap {
+  width:200px;
+  margin:0 auto 0 auto;
 }
 
 /* Twitter Widget Fix */

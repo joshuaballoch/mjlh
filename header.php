@@ -38,10 +38,16 @@
         <meta name="keywords" content="McGill,university,health,journal,law,college,canada,academic">
         <meta name="copyright" content="Copyright (C) 2010">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <!-- Assets -->
+        <!-- The Open Sans font is included from Google Web Fonts -->
+        <link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,800italic,300,400,800'>
+
         <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" media="all">
         <script type="text/javascript" src="vendor/jquery.js"></script>
+        <script type="text/javascript" src="vendor/respond.min.js"></script>
+        <script type="text/javascript" src="vendor/modernizr.min.js"></script>
         <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/share.js"></script>
 
@@ -52,14 +58,6 @@
         <link rel="stylesheet" href="vendor/fontello-css/fontello.css">
         <!--[if IE 7]>
         <link rel="stylesheet" href="vendor/fontello-css/fontello-ie7.css"><![endif]-->
-
-
-        <!-- sticky footer solution for IE -->
-        <!--[if !IE 7]>
-          <style type="text/css">
-            #wrap {display:table;height:100%}
-          </style>
-        <![endif]-->
 
         <link rel="shortcut icon" href="/favicon.ico">
         <link rel="icon" type="image/ico" href="/favicon.ico">
@@ -72,28 +70,29 @@
         <?php if (isset($headtext)) echo $headtext; ?>
 
     </head>
-    <body> <!-- ends in footer.php -->
-      <div id="wrap"> <!-- dummy for sticky footer soln, ends in footer.php -->
-      <header>
-        <div id="header-inner" class="container">
-          <div class="locale-link">
-            <?php echo getSwitchLanguageLink($lang); ?>
-          </div>
-          <a href="/">
-            <h1 class="hidden-xs"><div class="mjlh-logo"></div><?php talk("THE McGILL JOURNAL OF LAW & HEALTH","REVUE DE DROIT ET SANTÉ DE McGILL",$lang); ?></h1>
-            <h1 class="visible-xs small"><div class="mjlh-logo"></div><?php talk("THE McGILL JOURNAL OF LAW & HEALTH","REVUE DE DROIT ET SANTÉ DE McGILL",$lang); ?></h1>
-          </a>
-          <nav>
-            <ul class="nav">
-              <?php $path = explode('?', $_SERVER['REQUEST_URI'], 2); $path = $path[0];?>
-              <li><a class="<?php if ($path === "/index.php" || $path === "/") echo "active" ;?>" href="index.php"><?php talk("Home","&nbsp;Accueil&nbsp;",$lang); ?></a></li>
-              <li><a class="<?php if ($path === "/volumes.php" || $path === "/articles.php") echo "active" ;?>" href="volumes.php"><?php talk("Issues","&nbsp;Numéros&nbsp;",$lang); ?></a></li>
-              <li><a class="<?php if ($_SERVER["REQUEST_URI"] === "/page.php?id=colloquiumhome") echo "active" ;?>" href="page.php?id=colloquiumhome" rel = "colloquiumsubmenu"><?php talk("Colloquium","&nbsp;Colloque&nbsp;",$lang); ?></a></li>
-              <li><a class="<?php if ($_SERVER["REQUEST_URI"] === "/page.php?id=submissions") echo "active" ;?>" href="page.php?id=submissions"><?php talk("Submissions","Soumissions",$lang); ?></a></li>
-            </ul>
-          </nav>
+    <body class="frame"> <!-- ends in footer.php -->
+      <div class="frame-row">
+          <header >
+            <div id="header-inner" class="container">
+              <div class="locale-link">
+                <?php echo getSwitchLanguageLink($lang); ?>
+              </div>
+              <a href="/">
+                <h1 class="hidden-xs"><div class="mjlh-logo"></div><?php talk("McGILL JOURNAL OF LAW & HEALTH","REVUE DE DROIT ET SANTÉ DE McGILL",$lang); ?></h1>
+                <h1 class="visible-xs small"><div class="mjlh-logo"></div><?php talk("McGILL JOURNAL OF LAW & HEALTH","REVUE DE DROIT ET SANTÉ DE McGILL",$lang); ?></h1>
+              </a>
+              <nav>
+                <ul class="nav">
+                  <?php $path = explode('?', $_SERVER['REQUEST_URI'], 2); $path = $path[0];?>
+                  <li><a class="<?php if ($path === "/index.php" || $path === "/") echo "active" ;?>" href="index.php"><?php talk("Online","En Ligne",$lang); ?></a></li>
+                  <li><a class="<?php if ($path === "/volumes.php" || $path === "/articles.php") echo "active" ;?>" href="volumes.php"><?php talk("The Journal","Le Journal",$lang); ?></a></li>
+                  <li><a class="<?php if ($_SERVER["REQUEST_URI"] === "/page.php?id=colloquiumhome") echo "active" ;?>" href="page.php?id=colloquiumhome" rel = "colloquiumsubmenu"><?php talk("Colloquium","&nbsp;Colloque&nbsp;",$lang); ?></a></li>
+                  <li><a class="<?php if ($_SERVER["REQUEST_URI"] === "/page.php?id=submissions") echo "active" ;?>" href="page.php?id=submissions"><?php talk("Submissions","Soumissions",$lang); ?></a></li>
+                </ul>
+              </nav>
+            </div>
+          </header>
         </div>
-      </header>
 
-    <div id="container">
+    <div id="container" class="frame-row expand">
          <div class= "container">

@@ -49,7 +49,7 @@ var resizeHeaderHeight = function(viewPortWidth,triggerWidth) {
   var $header = $('header');
   var startHeight = 125;
   var minHeight = 59;
-  var startPadding = 56;
+  var startPadding = 50;
   var minPadding = 4;
 
   var newHeight = responsiveScaleThis(startHeight,minHeight,viewPortWidth,triggerWidth);

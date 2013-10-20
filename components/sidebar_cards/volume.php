@@ -28,8 +28,21 @@
           $displaytext .= "Issue ";
         }
         $displaytext .= $line[1] . " (" . $line[2] . ")";
+        // Get the date to put in!
+        if ($lang == "fr") {
+          $issue_term = "Numéro ";
+          $issue_date_key = "VOLUME_DATE_FR";
+        } else {
+          $issue_term = "Issue ";
+          $issue_date_key = "VOLUME_DATE_EN";
+        }
+        $date_line = $line[$issue_date_key];
     }
     ?>
+    <?php
+
+    ?>
+
     <h2>
       <?php if (!isset($volume_card_volume) && !isset($volume_card_issue)) { ?>
         <a href="/volumes.php?">
@@ -38,7 +51,11 @@
         <a href="/volumes.php?v=<?php echo $result["VOLUME_NUM"]?>&i=<?php echo $result["ISSUE_NUM"]?>">
         <?php talk("In this issue", "Dans ce numéro", $lang) ?>
       <?php } ?>
+      <div class="small">
+        <?php echo " - ".$date_line."" ?>
+      </div>
       </a>
+
     </h2>
     <?php
 
