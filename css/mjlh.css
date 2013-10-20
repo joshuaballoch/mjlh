@@ -181,7 +181,7 @@ header ul.nav .btn-group button.btn {
   background:#fff;
   margin:0 -10px 10px 0;
   width:100%;
-  padding:15px;
+  padding:20px 20px 15px 20px;
   border:1px solid #dfdfdf;
   overflow:hidden;
   z-index:1;
@@ -191,12 +191,22 @@ header ul.nav .btn-group button.btn {
 .card h2 {
   font-size:19px;
   line-height:25px;
-  margin-top:-2px;
+  margin-top:2px;
+  padding-left:5px;
+  margin-left:-5px;
+  margin-right:-5px;
   color:#444;
+  width:100%;
+  border-bottom:1px dotted #e5e5e5;
+  padding-bottom:3px;
 }
 
 .card h2 a {
   color:#444;
+}
+
+.card .author_stamp {
+  color:#888;
 }
 
 .card a.read_more {
