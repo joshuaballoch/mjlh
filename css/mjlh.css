@@ -177,7 +177,7 @@ header ul.nav .btn-group button.btn {
   font-size: 41px;
   font-weight: 400;
   /*font-family:"Book Antiqua","Palatino-Linotype";*/
-  color:#444;
+  color:#CA3434;
 }
 .card {
   background:#fff;
@@ -211,10 +211,19 @@ header ul.nav .btn-group button.btn {
   color:#444;
 }
 
+.card h2 .small {
+  display:inline;
+  font-weight:200;
+  font-size:90%;
+}
+
 .card .author_stamp {
   color:#888;
 }
-
+.card h4 {
+  font-size:14px;
+  text-transform: uppercase;
+}
 .card .content h4 {
   font-size:18px;
 }
@@ -250,7 +259,10 @@ header ul.nav .btn-group button.btn {
 }
 
 .card.full-page-card h2 {
-  font-size:23px;
+  font-size: 23px;
+  line-height: 33px;
+  padding-bottom: 7px;
+  margin-top: -3px;
 }
 
 .card.full-page-card .content {
