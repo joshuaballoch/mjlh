@@ -40,6 +40,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- Assets -->
+        <!-- The Open Sans font is included from Google Web Fonts -->
+        <link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,800italic,300,400,800'>
+
         <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" media="all">
         <script type="text/javascript" src="vendor/jquery.js"></script>
         <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>

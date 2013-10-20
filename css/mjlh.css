@@ -3,7 +3,7 @@
 body
 {
    background-color: #eee;
-   font-family: Helvetica, Arial, Sans-serif;
+   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, Sans-serif;
    font-size: 11px;
    margin: 0px;
    font-weight:200;
@@ -41,6 +41,7 @@ h1, h2, h3, h4, legend
   margin-top:5px;
   margin-bottom: 5px;
   color: #191970;    /*midnight blue*/
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial;
 }
 
 h1
@@ -74,7 +75,7 @@ p
 
 input, textarea, select
 {
-   font-family: Verdana, sans-serif;
+   /*font-family: Verdana, sans-serif;*/
    font-size: 11px;
 }
 
@@ -173,8 +174,8 @@ header ul.nav .btn-group button.btn {
 }
 .header-card h1, .header-card h1 a {
   font-size: 41px;
-  font-weight: 800;
-  font-family:"Book Antiqua","Palatino-Linotype";
+  font-weight: 400;
+  /*font-family:"Book Antiqua","Palatino-Linotype";*/
   color:#444;
 }
 .card {
@@ -278,7 +279,7 @@ footer .footer-shadow {
   left: 295px;
   font-size: 32pt;
   line-height: 115%;
-  font-family: Palatino Linotype, Serif;
+  /*font-family: Palatino Linotype, Serif;*/
   letter-spacing:-0.3px
 }
 
@@ -386,7 +387,7 @@ footer .footer-shadow {
 {
    text-transform: none;
    letter-spacing: 1px;
-   font-family: Palatino Linotype, Serif;
+   /*font-family: Palatino Linotype, Serif;*/
    font-size: 22px;
 }
 #homeblogentry, #blogentrydiv
