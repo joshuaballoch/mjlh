@@ -38,6 +38,7 @@
         <meta name="keywords" content="McGill,university,health,journal,law,college,canada,academic">
         <meta name="copyright" content="Copyright (C) 2010">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <!-- Assets -->
         <!-- The Open Sans font is included from Google Web Fonts -->
