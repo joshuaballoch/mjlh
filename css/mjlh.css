@@ -174,8 +174,6 @@ header ul.nav .btn-group button.btn {
   margin-top: -10px;
   margin-bottom: -2px;
   padding-left:16px;
-  z-index: 0;
-  position: relative;
 }
 .header-card h1, .header-card h1 a {
   font-size: 36px;
@@ -189,8 +187,6 @@ header ul.nav .btn-group button.btn {
   padding:20px 20px 15px 20px;
   border:1px solid #dfdfdf;
   overflow:hidden;
-  z-index:1;
-  position:relative;
 }
 
 .card img {
