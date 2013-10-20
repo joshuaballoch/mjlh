@@ -6,6 +6,7 @@ body
    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, Sans-serif;
    font-size: 12px;
    margin: 0px;
+   font-weight:200;
 }
 
 .inline {
@@ -168,6 +169,7 @@ header ul.nav .btn-group button.btn {
 .header-card {
   margin-top: -10px;
   margin-bottom: -2px;
+  padding-left:16px;
   z-index: 0;
   position: relative;
 }
@@ -201,6 +203,10 @@ header ul.nav .btn-group button.btn {
   padding-bottom:3px;
 }
 
+.card strong, .card b {
+  font-weight:400;
+}
+
 .card h2 a {
   color:#444;
 }
@@ -209,6 +215,9 @@ header ul.nav .btn-group button.btn {
   color:#888;
 }
 
+.card .content {
+  font-size:14px;
+}
 .card a.read_more {
   float:right;
   font-style: italic;
