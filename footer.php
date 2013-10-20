@@ -44,18 +44,6 @@
       </footer>
     </div>
 
-          <!--HTML for the Drop Down Menus associated with Top Menu Bar-->
-          <!--They should be inserted OUTSIDE any element other than the BODY tag itself-->
-          <!--A good location would be the end of the page (right above "</BODY>")-->
-
-          <!--'Colloquium' Submenu FIX ME
-          <ul id="colloquiumsubmenu" class="ddsubmenustyle">
-          <li><a href="page.php?id=colloquiumreg"><?php talk("REGISTER FOR THE COLLOQUIUM NOW!","R&eacute;actions",$lang); ?></a></li>
-          <li><a href="page.php?id=colloquiumspeakers"><?php talk("Speakers","Conf&eacute;renciers",$lang); ?></a></li>
-          <li><a href="page.php?id=colloquiumsched"><?php talk("Schedule","Programme",$lang); ?></a></li>
-          </ul>
-        -->
-
       <script type="text/javascript">
       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
       document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
