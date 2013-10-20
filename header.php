@@ -47,6 +47,7 @@
         <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" media="all">
         <script type="text/javascript" src="vendor/jquery.js"></script>
         <script type="text/javascript" src="vendor/respond.min.js"></script>
+        <script type="text/javascript" src="vendor/modernizr.min.js"></script>
         <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/share.js"></script>
 
