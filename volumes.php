@@ -40,68 +40,81 @@
         <?php talk("The Journal", "Le Journal", $lang) ?>
       </h1>
     </div>
-    <div class="card">
-      <h1>
+    <div class="card full-page-card volumes">
+      <h2>
         <?php echo "Volume ". $volume["VOLUME_NUM"] . ", " . $issue_text . $volume["ISSUE_NUM"] . " (" . $volume[$date_key] . ")";?>
-      </h1>
-      <?php // RENDER THE DOWNLOAD LINK ?>
-      <a href="/pdfs/<?php echo $volume["FILENAME"] ?>" target="_blank" onClick="parent.location='dltracker.php?v=<?php echo $displayvolume ?>&i= <?php echo $displayissue ?>'">
-        <?php talk("Download Full Issue (PDF)", "T&eacute;l&eacute;charger le num&eacute;ro complet (PDF)", $lang); ?>
-      </a>
+      </h2>
+      <div class="author_stamp pull-right">
+        <?php // RENDER THE DOWNLOAD LINK ?>
+        <a href="/pdfs/<?php echo $volume["FILENAME"] ?>" target="_blank" onClick="parent.location='dltracker.php?v=<?php echo $displayvolume ?>&i= <?php echo $displayissue ?>'">
+          <i class="icon-download"></i><?php talk("Download Full Issue (PDF)", "T&eacute;l&eacute;charger le num&eacute;ro complet (PDF)", $lang); ?>
+        </a>
+      </div>
 
-      <?php // RENDER THE ISSUE CONTENTS
-        $items_query = "SELECT * FROM VOLUME_ITEMS where volume_num = '".$displayvolume."' and issue_num = '" . $displayissue . "' order by start_page";
-        $items_result = mysql_query($items_query, GetMyConnection()) or die('Error getting volume contents: ' . mysql_error());
+      <div class="content">
 
-        $currentheading = "";
-        while ($item = mysql_fetch_array($items_result)) {
-          //Hack: 'Case Comments' is the only type which is not the same in both languages. Instead of adding another DB field, just do it here.
-          if ($item['TYPE'] == "Case Comments" && $lang == "fr")
-          {
-            $item['TYPE'] = "Commentaires d'arrêt";
-          }
+        <?php // RENDER THE ISSUE CONTENTS
+          $items_query = "SELECT * FROM VOLUME_ITEMS where volume_num = '".$displayvolume."' and issue_num = '" . $displayissue . "' order by start_page";
+          $items_result = mysql_query($items_query, GetMyConnection()) or die('Error getting volume contents: ' . mysql_error());
 
-          if ($item['TYPE'] != $currentheading)
-          {
-            $currentheading = $item['TYPE'];
-            echo "<h4>" . $currentheading . "</h4>\n";
-          }
-          ?>
-          <p>
-            <strong><a href="articles.php?article_id=<?php echo $item["ITEM_ID"] ?>">
-              <?php echo $item["TITLE"] ?>
-            </a></strong><br>
-            <?php echo $item["AUTHOR"] ?>
+          $currentheading = "";
+          while ($item = mysql_fetch_array($items_result)) {
+            //Hack: 'Case Comments' is the only type which is not the same in both languages. Instead of adding another DB field, just do it here.
+            if ($item['TYPE'] == "Case Comments" && $lang == "fr")
+            {
+              $item['TYPE'] = "Commentaires d'arrêt";
+            }
 
-            <?php
-              echo "(";
-              if ($item['START_PAGE'] == $item['END_PAGE']) {
-                echo "p." . $item['START_PAGE'] . ")";
-              } else {
-                echo "pp. " . $item['START_PAGE'] . "-" . $item['END_PAGE'] . ")";
-              }
+            if ($item['TYPE'] != $currentheading)
+            {
+              $currentheading = $item['TYPE'];
+              echo "<h4>" . $currentheading . "</h4>\n";
+            }
             ?>
-            <br>
-            <a href = '/pdfs/vol<?php echo $article['VOLUME_NUM'] ?>-<?php echo $article['ISSUE_NUM'] ?>/<?php echo $article['FILENAME'] ?>' target='_blank' onClick="parent.location='dltracker.php?item=<?php echo $article['ITEM_ID'] ?>">
-              <i class="icon-download"></i>
-              <?php talk("Download (PDF)","Telechargez (PDF)",$lang) ?>
-            </a>
-          </p>
+            <p>
+              <strong><a href="articles.php?article_id=<?php echo $item["ITEM_ID"] ?>">
+                <?php echo $item["TITLE"] ?>
+              </a></strong>
+              <div class="about-article">
 
-        <?php } // end while item = fetch array ?>
+                <?php echo $item["AUTHOR"] ?>
+
+                <?php
+                  echo "(";
+                  if ($item['START_PAGE'] == $item['END_PAGE']) {
+                    echo "p." . $item['START_PAGE'] . ")";
+                  } else {
+                    echo "pp. " . $item['START_PAGE'] . "-" . $item['END_PAGE'] . ")";
+                  }
+                ?>
+              </div>
+              <a class="download-link" href = '/pdfs/vol<?php echo $article['VOLUME_NUM'] ?>-<?php echo $article['ISSUE_NUM'] ?>/<?php echo $article['FILENAME'] ?>' target='_blank' onClick="parent.location='dltracker.php?item=<?php echo $article['ITEM_ID'] ?>">
+                <i class="icon-download"></i>
+                <?php talk("Download (PDF)","Telechargez (PDF)",$lang) ?>
+              </a>
+            </p>
+
+          <?php } // end while item = fetch array ?>
+
+      </div>
+
+
 
       <div class="card-share">
         <?php require $_SERVER["DOCUMENT_ROOT"]."/components/shared/share.php" ?>
       </div>
     </div>
-    <div class="card">
-      <?php
-        //Add the comments
-        // MUST define identifier first
-        $disqus_identifier = "volume/".$displayvolume."/issue/".$displayissue;
-        require $_SERVER["DOCUMENT_ROOT"]."/components/shared/comments.php";
-      ?>
-    </div>
+    <?php // DISABLE VOLUME LEVEL COMMENTS
+      //<div class="card">
+      //  <?php
+      //    //Add the comments
+      //    // MUST define identifier first
+      //    $disqus_identifier = "volume/".$displayvolume."/issue/".$displayissue;
+      //    require $_SERVER["DOCUMENT_ROOT"]."/components/shared/comments.php";
+      //
+      //</div>
+    ?>
+
   </div>
 
   <div class="col-sm-4">
