@@ -9,6 +9,10 @@ body
    font-weight:200;
 }
 
+ul {
+  padding:0;
+}
+
 .inline {
   display:inline;
 }
