@@ -46,7 +46,7 @@
       </h2>
       <div class="author_stamp pull-right">
         <?php // RENDER THE DOWNLOAD LINK ?>
-        <a href="/pdfs/<?php echo $volume["FILENAME"] ?>" target="_blank" onClick="parent.location='dltracker.php?v=<?php echo $displayvolume ?>&i= <?php echo $displayissue ?>'">
+        <a href="/pdfs/vol<?php echo $volume["VOLUME_NUM"] ?>-<?php echo $volume["ISSUE_NUM"] ?>/<?php echo $volume["FILENAME"] ?>" target="_blank" onClick="parent.location='dltracker.php?v=<?php echo $displayvolume ?>&i= <?php echo $displayissue ?>'">
           <i class="icon-download"></i><?php talk("Download Full Issue (PDF)", "T&eacute;l&eacute;charger le num&eacute;ro complet (PDF)", $lang); ?>
         </a>
       </div>
@@ -88,7 +88,7 @@
                   }
                 ?>
               </div>
-              <a class="download-link" href = '/pdfs/vol<?php echo $article['VOLUME_NUM'] ?>-<?php echo $article['ISSUE_NUM'] ?>/<?php echo $article['FILENAME'] ?>' target='_blank' onClick="parent.location='dltracker.php?item=<?php echo $article['ITEM_ID'] ?>">
+              <a class="download-link" href = '/pdfs/vol<?php echo $item['VOLUME_NUM'] ?>-<?php echo $item['ISSUE_NUM'] ?>/<?php echo $item['FILENAME'] ?>' target='_blank' onClick="parent.location='dltracker.php?item=<?php echo $item['ITEM_ID'] ?>">
                 <i class="icon-download"></i>
                 <?php talk("Download (PDF)","Telechargez (PDF)",$lang) ?>
               </a>
