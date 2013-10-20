@@ -20,8 +20,12 @@
 
 <div class="row">
   <div class="col-sm-8">
-    <div class="card">
+    <div class="header-card">
       <h1>
+        <?php talk("The Journal", "Le Journal", $lang) ?>
+      </h1>
+    </div>
+    <div class="card">
         <?php
           if ($lang == "fr") {
             $date_key = "VOLUME_DATE_FR";
@@ -45,17 +49,15 @@
           }
 
         ?>
+        <h2>
         <a href="/volumes.php?v=<?php echo $article["VOLUME_NUM"]?>&i=<?php echo $article["ISSUE_NUM"]?>">
           <?php echo "Volume ". $volume["VOLUME_NUM"] . ", " . $issue_text . $volume["ISSUE_NUM"] . " (" . $volume[$date_key] . ")";?>
         </a>
-      </h1>
-    </div>
-    <div class="card">
-
-        <h2> <?php echo $article["TITLE"] ?> </h2>
-        <p>
+        </h2>
+        <h3> <?php echo $article["TITLE"] ?> </h3>
+        <div class="author_stamp">
           <?php talk ("Written By", "Écrit par",$lang) ?>
-          <?php echo $article["AUTHOR"] ?> <br>
+          <?php echo $article["AUTHOR"] ?>
           <?php
             echo "(";
             if ($article['START_PAGE'] == $article['END_PAGE']) {
@@ -64,21 +66,30 @@
               echo "pp. " . $article['START_PAGE'] . "-" . $article['END_PAGE'] . ")";
             }
           ?>
-        </p>
-        <?php echo $abtract ?>
+        </div>
+        <br>
+        <div class="content">
+            <?php if ($article["TYPE"] != null) { ?>
+              <h4>
+                <?php talk("ABTRACT","RESUMÉ",$lang) ?>
+              </h4>
+            <?php }?>
+
+          <?php echo $abtract ?>
+
+          <?php if ($article["TYPE"] == null) { // THEN IT IS AN EDITOR'S NOTE ?>
+            <?php if ($abtract == null) {
+                talk("No content is available for display.", "Pas de content consultable pour cet article", $lang);
+            } ?>
+          <?php } else { // THEN IT IS AN ARTICLE ?>
+            <?php if ($abtract == null) {
+                talk("No abstract is available for display.", "Pas de resumé consultable pour cet article", $lang);
+            } ?>
+          <?php } ?>
+        </div>
 
 
-        <?php if ($article["TYPE"] == null) { // THEN IT IS AN EDITOR'S NOTE ?>
-          <?php if ($abtract == null) {
-              talk("No content is available for display.", "Pas de content consultable pour cet article", $lang);
-          } ?>
-        <?php } else { // THEN IT IS AN ARTICLE ?>
-          <?php if ($abtract == null) {
-              talk("No abstract is available for display.", "Pas de resumé consultable pour cet article", $lang);
-          } ?>
-        <?php } ?>
-
-
+        <br>
         <h5> <?php talk("Download", "Téléchargement", $lang) ?> </h5>
 
         <a href = '/pdfs/vol<?php echo $article['VOLUME_NUM'] ?>-<?php echo $article['ISSUE_NUM'] ?>/<?php echo $article['FILENAME'] ?>' target='_blank' onClick="parent.location='dltracker.php?item=<?php echo $article['ITEM_ID'] ?>">
@@ -86,7 +97,7 @@
           <?php echo $article["TITLE"]." (PDF)" ?>
 
         </a>
-
+        <br>
 
 
       <div class="card-share">

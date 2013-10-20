@@ -7,7 +7,7 @@
     <div class="header-card">
       <h1>
         <a href="/">
-          <?php talk("MJLH Online","RDSM en ligne",$lang); ?>
+          <?php talk("MJLH Online","RDSM En Ligne",$lang); ?>
         </a>
       </h1>
     </div>
