@@ -57,7 +57,10 @@
     </div>
   </div>
   <div class="col-sm-4">
-    <?php require $_SERVER["DOCUMENT_ROOT"]."/components/shared/sidebar.php"; ?>
+    <?php
+      require $_SERVER["DOCUMENT_ROOT"]."/components/sidebar_cards/about.php";
+      require $_SERVER["DOCUMENT_ROOT"]."/components/shared/sidebar.php";
+    ?>
   </div>
 </div>
 

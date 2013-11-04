@@ -88,6 +88,7 @@
                   <li><a class="<?php if ($path === "/volumes.php" || $path === "/articles.php") echo "active" ;?>" href="volumes.php"><?php talk("The Journal","Le Journal",$lang); ?></a></li>
                   <li><a class="<?php if ($_SERVER["REQUEST_URI"] === "/page.php?id=colloquiumhome") echo "active" ;?>" href="page.php?id=colloquiumhome" rel = "colloquiumsubmenu"><?php talk("Colloquium","&nbsp;Colloque&nbsp;",$lang); ?></a></li>
                   <li><a class="<?php if ($_SERVER["REQUEST_URI"] === "/page.php?id=submissions") echo "active" ;?>" href="page.php?id=submissions"><?php talk("Submissions","Soumissions",$lang); ?></a></li>
+                  <li><a class="<?php if ($_SERVER["REQUEST_URI"] === "/page.php?id=about") echo "active" ;?>" href="page.php?id=about" rel="aboutsubmenu"><?php talk("ABOUT","ÀPROPOS",$lang); ?></a></li>
                 </ul>
               </nav>
             </div>

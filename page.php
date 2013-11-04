@@ -20,7 +20,13 @@
     </div>
   </div>
   <div class="col-sm-4">
-    <?php require $_SERVER["DOCUMENT_ROOT"]."/components/shared/sidebar.php"; ?>
+    <?php
+      $request_uri = $_SERVER["REQUEST_URI"];
+      if ( $request_uri === "/page.php?id=about" || $request_uri === "/page.php?id=advisoryboard" || $request_uri === "/page.php?id=recruitment" || $request_uri === "/page.php?id=subscriptions" || $request_uri === "/page.php?id=donations" ) {
+        require $_SERVER["DOCUMENT_ROOT"]."/components/sidebar_cards/about.php";
+      }
+      require $_SERVER["DOCUMENT_ROOT"]."/components/shared/sidebar.php";
+    ?>
   </div>
 </div>
 
