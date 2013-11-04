@@ -2,7 +2,7 @@
   $read_more_link = "blog.php?blog_id=". $line['BLOG_ID'];
 ?>
 
-<div class="card">
+<div class="card highlight-links">
   <h2>
     <a href="<?php echo $read_more_link ?>">
       <?php echo $line['TITLE'] ?>
