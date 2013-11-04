@@ -78,7 +78,7 @@
                 <?php echo getSwitchLanguageLink($lang); ?>
               </div>
               <a href="/">
-                <h1 class="hidden-xs"><div class="mjlh-logo"></div><?php talk("McGILL JOURNAL OF LAW & HEALTH","REVUE DE DROIT ET SANTÉ DE McGILL",$lang); ?></h1>
+                <h1 class="hidden-xs"><div class="mjlh-logo"></div><?php talk("McGILL JOURNAL OF LAW AND HEALTH","REVUE DE DROIT ET SANTÉ DE McGILL",$lang); ?></h1>
                 <h1 class="visible-xs small"><div class="mjlh-logo"></div><?php talk("McGILL JOURNAL OF LAW & HEALTH","REVUE DE DROIT ET SANTÉ DE McGILL",$lang); ?></h1>
               </a>
               <nav>
