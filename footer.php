@@ -21,7 +21,7 @@
                 <div class="footer-sub-wrap">
                   <h3><a href="page.php?id=contact"><?php talk("CONTACT US","NOUS JOINDRE",$lang); ?></a></h3>
                   <ul>
-                    <li><?php talk("McGill Journal of Law & Health","Revue de Droit et Santé de McGill",$lang); ?></li>
+                    <li><?php talk("McGill Journal of Law and Health","Revue de Droit et Santé de McGill",$lang); ?></li>
                     <li><?php talk("Faculty of Law - McGill University","Faculté de Droit - Université McGill",$lang); ?></li>
                     <li><?php talk("3644 Peel Street, Rm. 305","3644, Rue Peel, Bureau 305",$lang); ?></li>
                     <li>Montréal, Quebec H3A 1W9</li>
