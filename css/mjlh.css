@@ -267,7 +267,12 @@ header ul.nav .btn-group button.btn {
 
 .card.search-card {
   padding:0;
-  height:58px;
+  height:65px;
+
+}
+
+.card.search-card .reset-box-sizing {
+  padding:3px;
 }
 
 .card.full-page-card h2 {
