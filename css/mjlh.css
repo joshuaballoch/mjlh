@@ -287,11 +287,11 @@ header ul.nav .btn-group button.btn {
   font-size: 16px;
 }
 
-.card.full-page-card .content a, .card.full-page-card .content a:visited {
+.card.full-page-card.highlight-links .content a, .card.full-page-card.highlight-links .content a:visited {
   color:#2a2add;
 }
 
-.card.full-page-card .content a:hover {
+.card.full-page-card.highlight-links .content a:hover {
   color:#cc0000;
   text-decoration: underline;
 }

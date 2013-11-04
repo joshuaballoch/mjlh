@@ -11,7 +11,7 @@
         </a>
       </h1>
     </div>
-    <div class="card full-page-card">
+    <div class="card full-page-card highlight-links">
       <?php
         // Base Query
         $query = "SELECT BLOG_ID, TITLE, AUTHOR, DATE_FORMAT(BLOG_DATE,'%b. %e, %Y') as date,ENTRY FROM BLOGS ";
