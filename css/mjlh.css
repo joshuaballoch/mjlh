@@ -632,3 +632,9 @@ ul.pagination {
      -moz-box-sizing: content-box;
           box-sizing: content-box;
 }
+
+textarea.backend-wide {
+  width:650px;
+  height:300px;
+  display:block;
+}
