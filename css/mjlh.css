@@ -638,3 +638,7 @@ textarea.backend-wide {
   height:300px;
   display:block;
 }
+
+.note-editable {
+  background:white;
+}

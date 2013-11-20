@@ -29,8 +29,24 @@
       <head>
             <title>MJLH Website Administrative Backend</title>
             <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+
+            <link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css" media="all">
             <link rel="stylesheet" type="text/css" href="/css/mjlh.css" media="all">
-            <script type="text/javascript" src="/ckeditor/ckeditor.js" charset="utf-8"></script>
+            <link rel="stylesheet" type="text/css" href="/vendor/summernote/summernote.css" media="all">
+            <link rel="stylesheet" type="text/css" href="/vendor/summernote/summernote-bs3.css" media="all">
+
+            <!-- Icon Fonts -->
+            <link rel="stylesheet" href="/vendor/fontello-css/fontello.css">
+            <!--[if IE 7]>
+            <link rel="stylesheet" href="/vendor/fontello-css/fontello-ie7.css"><![endif]-->
+
+            <script type="text/javascript" src="/vendor/jquery.js"></script>
+            <script type="text/javascript" src="/vendor/respond.min.js"></script>
+            <script type="text/javascript" src="/vendor/modernizr.min.js"></script>
+            <script type="text/javascript" src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="/vendor/summernote/summernote.min.js" charset="utf-8"></script>
+            <script type="text/javascript" src="/js/textedit.js" charset="utf-8"></script>
+
       </head>
       <body>
       <center><h3>MJLH Website Administrative Backend</h3></center>
@@ -164,9 +180,9 @@
                        <input type = "hidden" name = "content_id" value = "<?php echo $line['CONTENT_ID']; ?>">
                        <div style = "width:900px;">
                        English:<br>
-                            <textarea class="ckeditor" cols="40" id="eneditor" name="en" rows="5"><?php echo $line['EN']; ?></textarea>
+                            <textarea class="wysiwyg" cols="40" id="eneditor" name="en" rows="5"><?php echo $line['EN']; ?></textarea>
                        French:<br>
-                            <textarea class="ckeditor" cols="40" id="freditor" name="fr" rows="5"><?php echo $line['FR']; ?></textarea>
+                            <textarea class="wysiwyg" cols="40" id="freditor" name="fr" rows="5"><?php echo $line['FR']; ?></textarea>
                        </div>
                        <input type = "submit" value = "Save">
                        </form>
@@ -188,7 +204,7 @@
                        Author: <input type = "text" name = "author" value = "<?php echo $line['AUTHOR']; ?>"><br>
                        Date(YYYY-MM-DD): <input type = "text" name = "date" value = "<?php echo $line['BLOG_DATE']; ?>"><br>
                        Entry:<br>
-                            <textarea class="ckeditor" cols="40" id="entryeditor" name="entry" rows="5"><?php echo $line['ENTRY']; ?></textarea>
+                            <textarea class="wysiwyg" cols="40" id="entryeditor" name="entry" rows="5"><?php echo $line['ENTRY']; ?></textarea>
 
                        </div>
                        <input type = "submit" value = "Save">
