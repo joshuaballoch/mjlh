@@ -264,6 +264,82 @@
 
              }//edit blog
 
+            // LISTEN FOR FORM SUBMISSION FOR VOLUME EDIT
+            if (array_key_exists('_volume_edit_submit_check', $_POST))
+            {
+                if ($_POST['volume_num'] != "" && $_POST['issue_num'] != "")
+                {
+                  $sql = "UPDATE VOLUMES
+                          SET volume_date_en=".clean_input($_POST['volume_date_en'])."
+                          , volume_date_fr=".clean_input($_POST['volume_date_fr'])."
+                          WHERE VOLUME_NUM=".clean_input($_POST['volume_num'])." AND ISSUE_NUM =".clean_input($_POST['issue_num']);
+                  $replaceresult = mysql_query($sql, GetMyConnection()) or die('Error saving volume: ' . mysql_error());
+                }
+            }
+
+             // EDIT VOLUME!!
+
+             if (array_key_exists('volume_num', $_REQUEST) && array_key_exists('issue_num', $_REQUEST)) {
+                 $vol_query = "select * from VOLUMES where VOLUME_NUM =".clean_input($_REQUEST['volume_num'])." and ISSUE_NUM =".clean_input($_REQUEST['issue_num']);
+                 $vol_result = mysql_query($vol_query, GetMyConnection()) or die('Error getting volume item: ' . mysql_error());
+                 $vol_line = mysql_fetch_assoc($vol_result);
+                ?>
+                <?php if ($vol_line) { ?>
+                  <form name="form" method="post" action="backend.php?volume_num=<?php echo $vol_line['VOLUME_NUM']; ?>&issue_num=<?php echo $vol_line['ISSUE_NUM']; ?>">
+                     <input type = "hidden" name = "volume_num" value = "<?php echo $vol_line['VOLUME_NUM']; ?>">
+                     <input type = "hidden" name = "issue_num" value = "<?php echo $vol_line['ISSUE_NUM']; ?>">
+                     <input type = "hidden" name = "_volume_edit_submit_check" value="1">
+                     <div style = "width:900px;">
+                     Volume Date (EN): <input type = "text" name = "volume_date_en" value = "<?php echo $vol_line['VOLUME_DATE_EN']; ?>"><br>
+                     Volume Date (FR): <input type = "text" name = "volume_date_fr" value = "<?php echo $vol_line['VOLUME_DATE_FR']; ?>"><br>
+
+                     </div>
+                     <input type = "submit" value = "Save">
+                  </form>
+                <?php } ?>
+                <?php
+             }
+
+             // LISTEN FOR FORM SUBMISSION FOR VOLUME EDIT
+            if (array_key_exists('_volume_item_edit_submit_check', $_POST))
+            {
+                if ($_POST['volume_item_id'] != "")
+                {
+                  $sql = "UPDATE VOLUME_ITEMS
+                          SET title=".clean_input($_POST['title'])."
+                          , author=".clean_input($_POST['author'])."
+                          , abstract_en=".clean_input($_POST['abstract_en'])."
+                          , abstract_fr=".clean_input($_POST['abstract_fr'])."
+                          WHERE ITEM_ID=".clean_input($_POST['volume_item_id']);
+                  $replaceresult = mysql_query($sql, GetMyConnection()) or die('Error saving volume: ' . mysql_error());
+                }
+            }
+
+             // EDIT VOLUME ITEM!!
+             if (array_key_exists('volume_item_id', $_REQUEST)) {
+                 $vol_item_query = "select * from VOLUME_ITEMS where ITEM_ID =".clean_input($_REQUEST['volume_item_id']);
+                 $vol_item_result = mysql_query($vol_item_query, GetMyConnection()) or die('Error getting volume item: ' . mysql_error());
+                 $vol_item_line = mysql_fetch_assoc($vol_item_result);
+                ?>
+                <?php if ($vol_item_line) { ?>
+                  <form name="form" method="post" action="backend.php?volume_item_id=<?php echo $vol_item_line['ITEM_ID']; ?>">
+                     <input type = "hidden" name = "volume_item_id" value = "<?php echo $vol_item_line['ITEM_ID']; ?>">
+                     <input type = "hidden" name = "_volume_item_edit_submit_check" value="1">
+                     <div style = "width:900px;">
+                     Title: <input type = "text" name = "title" value = "<?php echo $vol_item_line['TITLE']; ?>"><br>
+                     Author: <input type = "text" name = "author" value = "<?php echo $vol_item_line['AUTHOR']; ?>"><br>
+                     Abstract (EN):<br>
+                          <textarea class="wysiwyg" cols="40" id="entryeditor" name="abstract_en" rows="5"><?php echo $vol_item_line['ABSTRACT_EN']; ?></textarea>
+                     Abstract (FR):<br>
+                          <textarea class="wysiwyg" cols="40" id="entryeditor" name="abstract_fr" rows="5"><?php echo $vol_item_line['ABSTRACT_FR']; ?></textarea>
+
+                     </div>
+                     <input type = "submit" value = "Save">
+                  </form>
+                <?php } ?>
+                <?php
+             }
+
              if (array_key_exists('action', $_GET))
              {
                if ($_GET['action'] == "announcements")
