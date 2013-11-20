@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card free-highlight-links">
   <h2>
     <?php talk("Announcements","Annonces",$lang); ?>
   </h2>
