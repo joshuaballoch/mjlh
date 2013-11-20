@@ -134,6 +134,57 @@
                         </li>
 
                     </ul>
+                    <b>Volumes</b><br>
+                    <ul>
+                        <li>Edit Volume:<SELECT name="editblogselect" SIZE="1" onchange="window.open(this.options[this.selectedIndex].value,'_top')">
+                        <?php
+                           $query = "select * from VOLUMES";
+                           $result = mysql_query($query, GetMyConnection()) or die('Error getting volume list: ' . mysql_error());
+                           while ($line = mysql_fetch_assoc($result))
+                           {
+                             if ($_REQUEST['volume_num'] == $line['VOLUME_NUM'] && $_REQUEST['issue_num'] == $line['ISSUE_NUM'])
+                             {
+                               echo "<option selected = 'selected' ";
+                             }
+                             else
+                             {
+                               echo "<option ";
+                             }
+                             echo "value = 'http://".$_SERVER['HTTP_HOST']."/backend/backend.php?volume_num=" . $line['VOLUME_NUM'] . "&issue_num=".$line['ISSUE_NUM']."'> ( Volume " .$line['VOLUME_NUM'] . " Issue ".$line['ISSUE_NUM']." Item Id " .$line['ITEM_ID']. " Title: ".$line["TITLE"].")</option>\n";
+                           }
+                        ?>
+                        </SELECT>
+                        </li>
+                        <li>Edit Volume Item:<SELECT name="editblogselect" SIZE="1" onchange="window.open(this.options[this.selectedIndex].value,'_top')">
+                        <?php
+                           if ( $_REQUEST['volume_num'] && $_REQUEST['issue_num']) {
+                             $query = "select * from VOLUME_ITEMS where VOLUME_NUM = ".$_REQUEST['volume_num']." and ISSUE_NUM = ".$_REQUEST['issue_num'] ;
+                           } else if ($_REQUEST['volume_item_id']) {
+                             $query2 = "select VOLUME_NUM, ISSUE_NUM from VOLUME_ITEMS where ITEM_ID = ".$_REQUEST['volume_item_id'];
+                             $result2 = mysql_query($query, GetMyConnection()) or die('Error getting volume item: ' . mysql_error());
+                             $line2 = mysql_fetch_assoc($result2);
+                             $query = "select * from VOLUME_ITEMS where VOLUME_NUM = ".$line2['VOLUME_NUM']." and ISSUE_NUM = ".$line2['ISSUE_NUM'] ;
+                           } else {
+                             $query = "select * from VOLUME_ITEMS";
+                           }
+
+                           $result = mysql_query($query, GetMyConnection()) or die('Error getting volume item list: ' . mysql_error());
+                           while ($line = mysql_fetch_assoc($result))
+                           {
+                             if ($_REQUEST['volume_item_id'] == $line['ITEM_ID'])
+                             {
+                               echo "<option selected = 'selected' ";
+                             }
+                             else
+                             {
+                               echo "<option ";
+                             }
+                             echo "value = 'http://".$_SERVER['HTTP_HOST']."/backend/backend.php?volume_item_id=" . $line['ITEM_ID'] . "'> ( Volume " .$line['VOLUME_NUM'] . " Issue ".$line['ISSUE_NUM']." Item Id " .$line['ITEM_ID']. " Title: ".$line["TITLE"].")</option>\n";
+                           }
+                        ?>
+                        </SELECT>
+                        </li>
+                    </ul>
                     <b>Announcements</b><br>
                     <ul>
                         <li><a href = "backend.php?action=announcements">Edit Announcements</a>
