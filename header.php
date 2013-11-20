@@ -64,9 +64,6 @@
 
         <!-- JavaScript Assets -->
         <script type="text/javascript" src="js/responsive.js"></script>
-        <script type="text/javascript" src="js/wysihtml5.js"></script>
-        <link rel="stylesheet" type="text/css" href="/css/wysihtml5.css" media="all">
-
         <!-- Menu Stylesheets/Script -->
 
         <?php if (isset($headtext)) echo $headtext; ?>
