@@ -25,7 +25,7 @@
         <?php talk("The Journal", "Le Journal", $lang) ?>
       </h1>
     </div>
-    <div class="card">
+    <div class="card full-page-card">
         <?php
           if ($lang == "fr") {
             $date_key = "VOLUME_DATE_FR";
@@ -69,11 +69,11 @@
         </div>
         <br>
         <div class="content">
-            <?php if ($article["TYPE"] != null) { ?>
+            <?php //if ($article["TYPE"] != null) { ?>
               <h4>
                 <?php talk("ABTRACT","RESUMÉ",$lang) ?>
               </h4>
-            <?php }?>
+            <?php //}?>
 
           <?php echo $abtract ?>
 

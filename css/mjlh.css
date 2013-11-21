@@ -312,6 +312,13 @@ header ul.nav .btn-group button.btn {
   font-size:12px;
   margin-left:10px;
 }
+.card.volumes h4 {
+  margin-top:20px;
+}
+.card.volumes .content .article {
+  margin-left:10px;
+}
+
 
 footer {
   background-color: #666666;

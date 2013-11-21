@@ -71,10 +71,12 @@
               echo "<h4>" . $currentheading . "</h4>\n";
             }
             ?>
-            <p>
+            <div class="article">
+              <p>
               <strong><a href="articles.php?article_id=<?php echo $item["ITEM_ID"] ?>">
                 <?php echo $item["TITLE"] ?>
               </a></strong>
+              </p>
               <div class="about-article">
 
                 <?php echo $item["AUTHOR"] ?>
@@ -92,7 +94,7 @@
                 <i class="icon-download"></i>
                 <?php talk("Download (PDF)","Telechargez (PDF)",$lang) ?>
               </a>
-            </p>
+            </div>
 
           <?php } // end while item = fetch array ?>
 
