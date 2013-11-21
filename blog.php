@@ -35,7 +35,7 @@
       <div class="author_stamp">
         <?php talk ("Posted By", "Posté par",$lang) ?>
         <?php echo $line['AUTHOR'] ?>
-        <?php echo $line['date'] ?>
+        - <?php echo $line['date'] ?>
       </div>
 
       <div class="content">

@@ -11,12 +11,12 @@
 
     $max_pages = round($object_count/$per_page);
 
-    if (isset($_REQUEST["page_id"]) && is_numeric($_REQUEST["page_id"])) {
+    if (isset($_REQUEST["page_id"]) && is_numeric($_REQUEST["page_id"]) && $_REQUEST["page_id"] > 0) {
       $prev_page_id = $_REQUEST["page_id"]-1;
       $next_page_id = $_REQUEST["page_id"]+1;
     } else {
       $prev_page_id = null;
-      $next_page_id = 2;
+      $next_page_id = 1;
     }
 
     // Disable next page link if at the last page

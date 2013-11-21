@@ -38,13 +38,13 @@
           }
           // FALLBACK FOR ABSTRACT LOADED IN ONLY ONE LANGUAGE
 
-          $abtract = $article[$abstract_key];
+          $abstract = $article[$abstract_key];
 
-          if (!$abtract) {
+          if (!$abstract) {
             if ($lang == "fr") {
-              $abtract = $article["ABSTRACT_EN"];
+              $abstract = $article["ABSTRACT_EN"];
             } else {
-              $abtract = $article["ABSTRACT_FR"];
+              $abstract = $article["ABSTRACT_FR"];
             }
           }
 
@@ -56,7 +56,6 @@
         </h2>
         <h3> <?php echo $article["TITLE"] ?> </h3>
         <div class="author_stamp">
-          <?php talk ("Written By", "Écrit par",$lang) ?>
           <?php echo $article["AUTHOR"] ?>
           <?php
             echo "(";
@@ -71,19 +70,19 @@
         <div class="content">
             <?php //if ($article["TYPE"] != null) { ?>
               <h4>
-                <?php talk("ABTRACT","RESUMÉ",$lang) ?>
+                <?php talk("ABSTRACT","RÉSUMÉ",$lang) ?>
               </h4>
             <?php //}?>
 
-          <?php echo $abtract ?>
+          <?php echo $abstract ?>
 
           <?php if ($article["TYPE"] == null) { // THEN IT IS AN EDITOR'S NOTE ?>
-            <?php if ($abtract == null) {
+            <?php if ($abstract == null) {
                 talk("No content is available for display.", "Pas de content consultable pour cet article", $lang);
             } ?>
           <?php } else { // THEN IT IS AN ARTICLE ?>
-            <?php if ($abtract == null) {
-                talk("No abstract is available for display.", "Pas de resumé consultable pour cet article", $lang);
+            <?php if ($abstract == null) {
+                talk("No abstract is available for display.", "Pas de résumé consultable pour cet article", $lang);
             } ?>
           <?php } ?>
         </div>
